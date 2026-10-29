@@ -48,5 +48,6 @@
   ],
   "fovy": 90.0
  },
- "wrist_camera_fovy": 87.0
+ "wrist_camera_fovy": 87.0,
+ "layout": "minimal"
 }

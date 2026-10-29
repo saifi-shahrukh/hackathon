@@ -23,91 +23,8 @@
     <mesh name="Floor__0" file="Floor__0.obj" inertia="shell"/>
     <texture name="tex_Floor__0" type="2d" file="Floor__0.png"/>
     <material name="mat_Floor__0" texture="tex_Floor__0" rgba="1 1 1 1" specular="0.05" shininess="0.1"/>
-    <mesh name="FramedPicture_Square05__0" file="FramedPicture_Square05__0.obj" inertia="shell"/>
-    <texture name="tex_FramedPicture_Square05__0" type="2d" file="FramedPicture_Square05__0.png"/>
-    <material name="mat_FramedPicture_Square05__0" texture="tex_FramedPicture_Square05__0" rgba="1 1 1 1" specular="0.05" shininess="0.1"/>
-    <mesh name="FramedPicture_Square05__1" file="FramedPicture_Square05__1.obj" inertia="shell"/>
-    <texture name="tex_FramedPicture_Square05__1" type="2d" file="FramedPicture_Square05__1.png"/>
-    <material name="mat_FramedPicture_Square05__1" texture="tex_FramedPicture_Square05__1" rgba="1 1 1 1" specular="0.05" shininess="0.1"/>
-    <mesh name="FramedPicture_Square05__2" file="FramedPicture_Square05__2.obj" inertia="shell"/>
-    <material name="mat_FramedPicture_Square05__2" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="FramedPicture_Square05__3" file="FramedPicture_Square05__3.obj" inertia="shell"/>
-    <material name="mat_FramedPicture_Square05__3" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="Patient_bed__307___0" file="Patient_bed__307___0.obj" inertia="shell"/>
-    <texture name="tex_Patient_bed__307___0" type="2d" file="Patient_bed__307___0.png"/>
-    <material name="mat_Patient_bed__307___0" texture="tex_Patient_bed__307___0" rgba="1 1 1 1" specular="0.05" shininess="0.1"/>
-    <mesh name="Patient_bed__307___1" file="Patient_bed__307___1.obj" inertia="shell"/>
-    <material name="mat_Patient_bed__307___1" rgba="0.788 0.788 0.788 1" specular="0.1" shininess="0.2"/>
-    <mesh name="Patient_bed__307___2" file="Patient_bed__307___2.obj" inertia="shell"/>
-    <texture name="tex_Patient_bed__307___2" type="2d" file="Patient_bed__307___2.png"/>
-    <material name="mat_Patient_bed__307___2" texture="tex_Patient_bed__307___2" rgba="1 1 1 1" specular="0.05" shininess="0.1"/>
-    <mesh name="Patient_bed__307___3" file="Patient_bed__307___3.obj" inertia="shell"/>
-    <texture name="tex_Patient_bed__307___3" type="2d" file="Patient_bed__307___3.png"/>
-    <material name="mat_Patient_bed__307___3" texture="tex_Patient_bed__307___3" rgba="1 1 1 1" specular="0.05" shininess="0.1"/>
-    <mesh name="SM_BooksSet_26__0" file="SM_BooksSet_26__0.obj" inertia="shell"/>
-    <material name="mat_SM_BooksSet_26__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_BooksSet_26__1" file="SM_BooksSet_26__1.obj" inertia="shell"/>
-    <material name="mat_SM_BooksSet_26__1" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_BottleA__0" file="SM_BottleA__0.obj" inertia="shell"/>
-    <material name="mat_SM_BottleA__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_Chair_01a__0" file="SM_Chair_01a__0.obj" inertia="shell"/>
-    <material name="mat_SM_Chair_01a__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_Computer_02b__0" file="SM_Computer_02b__0.obj" inertia="shell"/>
-    <material name="mat_SM_Computer_02b__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_Desk_04a__0" file="SM_Desk_04a__0.obj" inertia="shell"/>
-    <material name="mat_SM_Desk_04a__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_FirstAidKit_01a__0" file="SM_FirstAidKit_01a__0.obj" inertia="shell"/>
-    <material name="mat_SM_FirstAidKit_01a__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_MedShelf_01d__0" file="SM_MedShelf_01d__0.obj" inertia="shell"/>
-    <material name="mat_SM_MedShelf_01d__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_MedicalBag_01a__0" file="SM_MedicalBag_01a__0.obj" inertia="shell"/>
-    <material name="mat_SM_MedicalBag_01a__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_MedicalCabinet_01a__0" file="SM_MedicalCabinet_01a__0.obj" inertia="shell"/>
-    <material name="mat_SM_MedicalCabinet_01a__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_MedicalCabinet_01a__1" file="SM_MedicalCabinet_01a__1.obj" inertia="shell"/>
-    <material name="mat_SM_MedicalCabinet_01a__1" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_Mirror__0" file="SM_Mirror__0.obj" inertia="shell"/>
-    <material name="mat_SM_Mirror__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_MopSet_01b__0" file="SM_MopSet_01b__0.obj" inertia="shell"/>
-    <material name="mat_SM_MopSet_01b__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_PillBottleSet_01a__0" file="SM_PillBottleSet_01a__0.obj" inertia="shell"/>
-    <material name="mat_SM_PillBottleSet_01a__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_PillBottleSet_01b__0" file="SM_PillBottleSet_01b__0.obj" inertia="shell"/>
-    <material name="mat_SM_PillBottleSet_01b__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_PillBottleSet_01c__0" file="SM_PillBottleSet_01c__0.obj" inertia="shell"/>
-    <material name="mat_SM_PillBottleSet_01c__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_PillBottleSet_01c_01__0" file="SM_PillBottleSet_01c_01__0.obj" inertia="shell"/>
-    <material name="mat_SM_PillBottleSet_01c_01__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_PillBottleSet_01d__0" file="SM_PillBottleSet_01d__0.obj" inertia="shell"/>
-    <material name="mat_SM_PillBottleSet_01d__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_PillBottleSet_01e__0" file="SM_PillBottleSet_01e__0.obj" inertia="shell"/>
-    <material name="mat_SM_PillBottleSet_01e__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_SideTable_02a__0" file="SM_SideTable_02a__0.obj" inertia="shell"/>
-    <material name="mat_SM_SideTable_02a__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_SoapDispenser_01a__0" file="SM_SoapDispenser_01a__0.obj" inertia="shell"/>
-    <material name="mat_SM_SoapDispenser_01a__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_SupplyCabinet_01c__0" file="SM_SupplyCabinet_01c__0.obj" inertia="shell"/>
-    <material name="mat_SM_SupplyCabinet_01c__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_SupplyCabinet_01c__1" file="SM_SupplyCabinet_01c__1.obj" inertia="shell"/>
-    <material name="mat_SM_SupplyCabinet_01c__1" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
     <mesh name="SM_SupplyCart_01e__0" file="SM_SupplyCart_01e__0.obj" inertia="shell"/>
     <material name="mat_SM_SupplyCart_01e__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_SupplyCart_02a__0" file="SM_SupplyCart_02a__0.obj" inertia="shell"/>
-    <material name="mat_SM_SupplyCart_02a__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_Toweldispenser_01a__0" file="SM_Toweldispenser_01a__0.obj" inertia="shell"/>
-    <material name="mat_SM_Toweldispenser_01a__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_TrashCan__0" file="SM_TrashCan__0.obj" inertia="shell"/>
-    <material name="mat_SM_TrashCan__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_TrashCan_02__0" file="SM_TrashCan_02__0.obj" inertia="shell"/>
-    <material name="mat_SM_TrashCan_02__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_UtilitiesTray_01e__0" file="SM_UtilitiesTray_01e__0.obj" inertia="shell"/>
-    <material name="mat_SM_UtilitiesTray_01e__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_Washbasin__0" file="SM_Washbasin__0.obj" inertia="shell"/>
-    <material name="mat_SM_Washbasin__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_WheelChair_01a__0" file="SM_WheelChair_01a__0.obj" inertia="shell"/>
-    <material name="mat_SM_WheelChair_01a__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
-    <mesh name="SM_Xraylightbox_01a__0" file="SM_Xraylightbox_01a__0.obj" inertia="shell"/>
-    <material name="mat_SM_Xraylightbox_01a__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
     <mesh name="ServingTray__0" file="ServingTray__0.obj" inertia="shell"/>
     <material name="mat_ServingTray__0" rgba="0.700 0.700 0.700 1" specular="0.1" shininess="0.2"/>
     <mesh name="Wall__0" file="Wall__0.obj" inertia="shell"/>
@@ -258,46 +175,7 @@
     <body name="room" pos="-0.0369 0.0 0.2911">
       <geom name="vis_Danny__0" type="mesh" mesh="Danny__0" material="mat_Danny__0" class="roomvis"/>
       <geom name="vis_Floor__0" type="mesh" mesh="Floor__0" material="mat_Floor__0" class="roomvis"/>
-      <geom name="vis_FramedPicture_Square05__0" type="mesh" mesh="FramedPicture_Square05__0" material="mat_FramedPicture_Square05__0" class="roomvis"/>
-      <geom name="vis_FramedPicture_Square05__1" type="mesh" mesh="FramedPicture_Square05__1" material="mat_FramedPicture_Square05__1" class="roomvis"/>
-      <geom name="vis_FramedPicture_Square05__2" type="mesh" mesh="FramedPicture_Square05__2" material="mat_FramedPicture_Square05__2" class="roomvis"/>
-      <geom name="vis_FramedPicture_Square05__3" type="mesh" mesh="FramedPicture_Square05__3" material="mat_FramedPicture_Square05__3" class="roomvis"/>
-      <geom name="vis_Patient_bed__307___0" type="mesh" mesh="Patient_bed__307___0" material="mat_Patient_bed__307___0" class="roomvis"/>
-      <geom name="vis_Patient_bed__307___1" type="mesh" mesh="Patient_bed__307___1" material="mat_Patient_bed__307___1" class="roomvis"/>
-      <geom name="vis_Patient_bed__307___2" type="mesh" mesh="Patient_bed__307___2" material="mat_Patient_bed__307___2" class="roomvis"/>
-      <geom name="vis_Patient_bed__307___3" type="mesh" mesh="Patient_bed__307___3" material="mat_Patient_bed__307___3" class="roomvis"/>
-      <geom name="vis_SM_BooksSet_26__0" type="mesh" mesh="SM_BooksSet_26__0" material="mat_SM_BooksSet_26__0" class="roomvis"/>
-      <geom name="vis_SM_BooksSet_26__1" type="mesh" mesh="SM_BooksSet_26__1" material="mat_SM_BooksSet_26__1" class="roomvis"/>
-      <geom name="vis_SM_BottleA__0" type="mesh" mesh="SM_BottleA__0" material="mat_SM_BottleA__0" class="roomvis"/>
-      <geom name="vis_SM_Chair_01a__0" type="mesh" mesh="SM_Chair_01a__0" material="mat_SM_Chair_01a__0" class="roomvis"/>
-      <geom name="vis_SM_Computer_02b__0" type="mesh" mesh="SM_Computer_02b__0" material="mat_SM_Computer_02b__0" class="roomvis"/>
-      <geom name="vis_SM_Desk_04a__0" type="mesh" mesh="SM_Desk_04a__0" material="mat_SM_Desk_04a__0" class="roomvis"/>
-      <geom name="vis_SM_FirstAidKit_01a__0" type="mesh" mesh="SM_FirstAidKit_01a__0" material="mat_SM_FirstAidKit_01a__0" class="roomvis"/>
-      <geom name="vis_SM_MedShelf_01d__0" type="mesh" mesh="SM_MedShelf_01d__0" material="mat_SM_MedShelf_01d__0" class="roomvis"/>
-      <geom name="vis_SM_MedicalBag_01a__0" type="mesh" mesh="SM_MedicalBag_01a__0" material="mat_SM_MedicalBag_01a__0" class="roomvis"/>
-      <geom name="vis_SM_MedicalCabinet_01a__0" type="mesh" mesh="SM_MedicalCabinet_01a__0" material="mat_SM_MedicalCabinet_01a__0" class="roomvis"/>
-      <geom name="vis_SM_MedicalCabinet_01a__1" type="mesh" mesh="SM_MedicalCabinet_01a__1" material="mat_SM_MedicalCabinet_01a__1" class="roomvis"/>
-      <geom name="vis_SM_Mirror__0" type="mesh" mesh="SM_Mirror__0" material="mat_SM_Mirror__0" class="roomvis"/>
-      <geom name="vis_SM_MopSet_01b__0" type="mesh" mesh="SM_MopSet_01b__0" material="mat_SM_MopSet_01b__0" class="roomvis"/>
-      <geom name="vis_SM_PillBottleSet_01a__0" type="mesh" mesh="SM_PillBottleSet_01a__0" material="mat_SM_PillBottleSet_01a__0" class="roomvis"/>
-      <geom name="vis_SM_PillBottleSet_01b__0" type="mesh" mesh="SM_PillBottleSet_01b__0" material="mat_SM_PillBottleSet_01b__0" class="roomvis"/>
-      <geom name="vis_SM_PillBottleSet_01c__0" type="mesh" mesh="SM_PillBottleSet_01c__0" material="mat_SM_PillBottleSet_01c__0" class="roomvis"/>
-      <geom name="vis_SM_PillBottleSet_01c_01__0" type="mesh" mesh="SM_PillBottleSet_01c_01__0" material="mat_SM_PillBottleSet_01c_01__0" class="roomvis"/>
-      <geom name="vis_SM_PillBottleSet_01d__0" type="mesh" mesh="SM_PillBottleSet_01d__0" material="mat_SM_PillBottleSet_01d__0" class="roomvis"/>
-      <geom name="vis_SM_PillBottleSet_01e__0" type="mesh" mesh="SM_PillBottleSet_01e__0" material="mat_SM_PillBottleSet_01e__0" class="roomvis"/>
-      <geom name="vis_SM_SideTable_02a__0" type="mesh" mesh="SM_SideTable_02a__0" material="mat_SM_SideTable_02a__0" class="roomvis"/>
-      <geom name="vis_SM_SoapDispenser_01a__0" type="mesh" mesh="SM_SoapDispenser_01a__0" material="mat_SM_SoapDispenser_01a__0" class="roomvis"/>
-      <geom name="vis_SM_SupplyCabinet_01c__0" type="mesh" mesh="SM_SupplyCabinet_01c__0" material="mat_SM_SupplyCabinet_01c__0" class="roomvis"/>
-      <geom name="vis_SM_SupplyCabinet_01c__1" type="mesh" mesh="SM_SupplyCabinet_01c__1" material="mat_SM_SupplyCabinet_01c__1" class="roomvis"/>
       <geom name="vis_SM_SupplyCart_01e__0" type="mesh" mesh="SM_SupplyCart_01e__0" material="mat_SM_SupplyCart_01e__0" pos="-0.1580 0.5010 0" class="roomvis"/>
-      <geom name="vis_SM_SupplyCart_02a__0" type="mesh" mesh="SM_SupplyCart_02a__0" material="mat_SM_SupplyCart_02a__0" class="roomvis"/>
-      <geom name="vis_SM_Toweldispenser_01a__0" type="mesh" mesh="SM_Toweldispenser_01a__0" material="mat_SM_Toweldispenser_01a__0" class="roomvis"/>
-      <geom name="vis_SM_TrashCan__0" type="mesh" mesh="SM_TrashCan__0" material="mat_SM_TrashCan__0" class="roomvis"/>
-      <geom name="vis_SM_TrashCan_02__0" type="mesh" mesh="SM_TrashCan_02__0" material="mat_SM_TrashCan_02__0" class="roomvis"/>
-      <geom name="vis_SM_UtilitiesTray_01e__0" type="mesh" mesh="SM_UtilitiesTray_01e__0" material="mat_SM_UtilitiesTray_01e__0" class="roomvis"/>
-      <geom name="vis_SM_Washbasin__0" type="mesh" mesh="SM_Washbasin__0" material="mat_SM_Washbasin__0" class="roomvis"/>
-      <geom name="vis_SM_WheelChair_01a__0" type="mesh" mesh="SM_WheelChair_01a__0" material="mat_SM_WheelChair_01a__0" class="roomvis"/>
-      <geom name="vis_SM_Xraylightbox_01a__0" type="mesh" mesh="SM_Xraylightbox_01a__0" material="mat_SM_Xraylightbox_01a__0" class="roomvis"/>
       <geom name="vis_ServingTray__0" type="mesh" mesh="ServingTray__0" material="mat_ServingTray__0" pos="-0.1580 0.5010 0" class="roomvis"/>
       <geom name="vis_Wall__0" type="mesh" mesh="Wall__0" material="mat_Wall__0" class="roomvis"/>
       <geom name="vis_Wall__1" type="mesh" mesh="Wall__1" material="mat_Wall__1" class="roomvis"/>

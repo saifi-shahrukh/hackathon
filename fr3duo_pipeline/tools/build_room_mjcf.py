@@ -17,6 +17,7 @@ static walls beneath the visible tray".
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -36,6 +37,11 @@ TRAY_FLOOR_TOP = -0.031   # overwritten by the mesh measurement below when avail
 TRAY_SHIFT = (0.463 - (TRAY_RAW["xmin"] + TRAY_RAW["xmax"]) / 2, 0.0 - (TRAY_RAW["ymin"] + TRAY_RAW["ymax"]) / 2)
 PROP_OFFSETS = {"SM_SupplyCart_01e": TRAY_SHIFT, "ServingTray": TRAY_SHIFT}
 DROP = {"SM_SupplyCart_03a", "WhiteCorrugatedBox_A34_16x16x10cm_PR_NVD_01", "NaturalBostonRoundBottle_A02_PR_NVD_01", "SM_PillBottle_01v"}
+# Minimal stacking setup (default): only what the task needs and what the cameras see around it.
+# The robot table ("Danny"), the supply cart with the serving tray, the floor and the four walls as
+# background. Everything else in the room (cabinets, shelves, bed, desk, props) is left out: it costs
+# render time, adds nothing to the task, and the policy cameras barely see it.
+KEEP_MINIMAL = {"Danny", "SM_SupplyCart_01e", "ServingTray", "Floor", "Wall", "Wall1", "Wall2", "Wall3"}
 TRAY = {**TRAY_RAW, "xmin": TRAY_RAW["xmin"] + TRAY_SHIFT[0], "xmax": TRAY_RAW["xmax"] + TRAY_SHIFT[0],
         "ymin": TRAY_RAW["ymin"] + TRAY_SHIFT[1], "ymax": TRAY_RAW["ymax"] + TRAY_SHIFT[1]}
 
@@ -59,8 +65,9 @@ def main() -> int:
         floor_top = TRAY_FLOOR_TOP
     print(f"[room] tray interior floor top (root frame) z = {floor_top:.4f}")
     assets, geoms = [], []
+    minimal = "--full-room" not in sys.argv
     for prop, info in man["props"].items():
-        if prop in DROP:
+        if prop in DROP or (minimal and prop not in KEEP_MINIMAL):
             continue
         off = PROP_OFFSETS.get(prop, (0.0, 0.0))
         pos_attr = f' pos="{off[0]:.4f} {off[1]:.4f} 0"' if off != (0.0, 0.0) else ""
@@ -134,7 +141,9 @@ def main() -> int:
             "head_camera_root": {"pos": [0.0991, -0.0431, 0.4706], "quat_wxyz": [0.6613, 0.2930, -0.2942, -0.6248], "fovy": 90.0},
             "wrist_camera_fovy": 87.0}
     (ROOT / "scene_meta.json").write_text(json.dumps(meta, indent=1))
-    print(f"[room] wrote {out} ({len(assets)} asset lines, {len(geoms)} visual geoms, {len(colliders)} colliders) and scene_meta.json")
+    meta["layout"] = "minimal" if minimal else "full_room"
+    (ROOT / "scene_meta.json").write_text(json.dumps(meta, indent=1))
+    print(f"[room] layout={'minimal' if minimal else 'full room'}: {out} ({len(geoms)} visual geoms, {len(colliders)} colliders)")
     return 0
 
 
