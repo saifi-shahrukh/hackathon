@@ -97,6 +97,7 @@ def main() -> int:
     ap.add_argument("--realtime", type=float, default=1.0, help="playback speed factor (1.0 = 6 Hz wall clock)")
     ap.add_argument("--scene", choices=["clinic", "flat"], default="clinic", help="clinic = organizers' room (default)")
     ap.add_argument("--snapshot", type=Path, default=None, help="also save the composed cameras frame to this PNG every 30 frames")
+    ap.add_argument("--look", choices=["plain", "rand500", "mixed"], default="mixed", help="appearance: plain (eval), rand500 colours, or mixed (data collection)")
     a = ap.parse_args()
     from fr3duo_pipeline.fr3duo.clinic_scene import ClinicParams, ClinicScene
     from fr3duo_pipeline.fr3duo.expert import ScriptedStacker
@@ -106,7 +107,7 @@ def main() -> int:
     gui = a.mode == "gui"
     t_build = time.time()
     print(f"[view] building the {a.scene} scene (5 s idle, up to a minute while data generation or training use the GPU)...", flush=True)
-    scene = (ClinicScene(ClinicParams(), cam_res=224, headless=not gui, overview=not gui) if a.scene == "clinic"
+    scene = (ClinicScene(ClinicParams(look=a.look), cam_res=224, headless=not gui, overview=not gui) if a.scene == "clinic"
              else CubeScene(SceneParams(), cam_res=224, headless=not gui, overview=not gui))   # headless=False opens the RCS GUI process
     print(f"[view] scene ready in {time.time() - t_build:.1f} s", flush=True)
     win = None

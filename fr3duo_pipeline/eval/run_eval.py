@@ -52,6 +52,7 @@ def main() -> int:
     ap.add_argument("--out", type=Path, default=Path("results/eval"))
     ap.add_argument("--strips", type=int, default=5, help="save head-camera strips for this many seeds")
     ap.add_argument("--scene", choices=["clinic", "flat"], default="clinic")
+    ap.add_argument("--look", choices=["plain", "rand500", "mixed"], default="plain", help="evaluation uses the plain (white table, grey floor) look by default")
     a = ap.parse_args()
     from PIL import Image
     from fr3duo_pipeline.fr3duo.scene import CubeScene, SceneParams
@@ -63,7 +64,7 @@ def main() -> int:
     out = a.out / a.condition
     out.mkdir(parents=True, exist_ok=True)
     (out / "strips").mkdir(exist_ok=True)
-    scene = ClinicScene(ClinicParams(), cam_res=224) if a.scene == "clinic" else CubeScene(SceneParams(), cam_res=224)
+    scene = ClinicScene(ClinicParams(look=a.look), cam_res=224) if a.scene == "clinic" else CubeScene(SceneParams(), cam_res=224)
     conn = None
     info = {}
     if not a.expert:

@@ -31,7 +31,7 @@ CAMS = ("external_camera", "left_wrist_camera", "right_wrist_camera")
 
 
 def run_one(args) -> dict:
-    seed, out_dir, cam_res, scene_name = args
+    seed, out_dir, cam_res, scene_name, look = args
     os.environ.setdefault("MUJOCO_GL", "egl")
     from fr3duo_pipeline.fr3duo.expert import ScriptedStacker
     from fr3duo_pipeline.fr3duo.scene import CubeScene, SceneParams
@@ -41,7 +41,7 @@ def run_one(args) -> dict:
     try:
         sc = _SCENE
     except NameError:
-        sc = _SCENE = ClinicScene(ClinicParams(), cam_res=cam_res) if scene_name == "clinic" else CubeScene(SceneParams(), cam_res=cam_res)
+        sc = _SCENE = ClinicScene(ClinicParams(look=look), cam_res=cam_res) if scene_name == "clinic" else CubeScene(SceneParams(), cam_res=cam_res)
     t0 = time.time()
     obs, info = sc.reset(seed=seed)
     ex = ScriptedStacker(sc, np.random.default_rng(seed))
@@ -82,7 +82,8 @@ def main() -> int:
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--cam-res", type=int, default=224)
     ap.add_argument("--max-attempts", type=int, default=None)
-    ap.add_argument("--scene", choices=["clinic", "flat"], default="clinic", help="clinic = organizers' room (default); flat = rand500-like floor scene")
+    ap.add_argument("--scene", choices=["clinic", "flat"], default="clinic", help="clinic = simple tray-table setup (default); flat = rand500-like floor scene")
+    ap.add_argument("--look", choices=["mixed", "plain", "rand500"], default="mixed", help="appearance per episode (clinic scene): mixed = 70%% rand500 colours, 30%% plain")
     a = ap.parse_args()
     a.out.mkdir(parents=True, exist_ok=True)
     log = a.out / "generation_log.jsonl"
@@ -97,7 +98,7 @@ def main() -> int:
             batch = []
             while len(batch) < a.workers and seed < a.seed0 + max_attempts:
                 if seed not in done:
-                    batch.append((seed, str(a.out), a.cam_res, a.scene))
+                    batch.append((seed, str(a.out), a.cam_res, a.scene, a.look))
                 seed += 1
             if not batch:
                 break

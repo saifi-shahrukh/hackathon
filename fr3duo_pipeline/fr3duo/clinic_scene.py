@@ -43,6 +43,18 @@ class ClinicParams(SceneParams):
     # fovy 52; D405 wrists fovy 58) so the policy trained on rand500 sees the same geometry.
     # "usd": the Isaac handover-stage cameras (head on the head link, fovy 90; wrists 87).
     cameras: str = "rand500"
+    # appearance per episode: "plain" = white table top on the grey floor (the evaluation setup);
+    # "rand500" = table top tinted with the rand500 surface colours (pink, wood, beige) and the floor
+    # around it in the rand500 edge colours (cyan, white, blue, ...), closing the image gap to the
+    # training data; "mixed" = rand500 look with probability `rand500_look_prob`, else plain.
+    look: str = "mixed"
+    rand500_look_prob: float = 0.7
+    table_tints: list = field(default_factory=lambda: [
+        (1.0, 0.65, 0.68), (1.0, 0.9, 0.78), (1.0, 0.8, 0.7), (0.95, 0.85, 0.65), (0.8, 0.35, 0.45),
+        (0.9, 0.85, 0.75), (0.75, 0.7, 0.45), (1.0, 0.75, 0.8), (0.95, 0.7, 0.5)])
+    floor_colors: list = field(default_factory=lambda: [
+        (0.5, 0.95, 0.95), (0.95, 0.95, 0.95), (0.2, 0.2, 0.9), (0.95, 0.9, 0.3), (0.8, 0.1, 0.2),
+        (0.3, 0.6, 0.3), (0.5, 0.5, 0.5), (0.9, 0.6, 0.2), (0.6, 0.3, 0.1)])
     # cube colours as seen in rand500 (red, blue, green, orange, cyan, yellow, purple, pink)
     cube_palette: list = field(default_factory=lambda: [
         (0.9, 0.1, 0.1), (0.1, 0.2, 0.9), (0.1, 0.8, 0.2), (0.95, 0.5, 0.1), (0.1, 0.8, 0.85),
@@ -121,6 +133,10 @@ class ClinicScene(CubeScene):
         self.light0 = (m.light_diffuse.copy(), m.light_ambient.copy())
         self.last_spawn = None
         self.rng = np.random.default_rng(0)
+        self.mat_table = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_MATERIAL, "tabletop")
+        self.mat_floor = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_MATERIAL, "mat_floor")
+        self.plain_rgba = {"table": m.mat_rgba[self.mat_table].copy() if self.mat_table >= 0 else None,
+                           "floor": m.mat_rgba[self.mat_floor].copy() if self.mat_floor >= 0 else None}
 
     # spawn region is given in the ROOT frame; convert to world
     def sample_spawn(self, rng: np.random.Generator) -> dict:
@@ -154,7 +170,19 @@ class ClinicScene(CubeScene):
         ls = float(rng.uniform(*p.light_scale))
         m.light_diffuse[:] = self.light0[0] * ls
         m.light_ambient[:] = self.light0[1] * min(1.2, ls)
-        return {"cube_colors": [list(map(float, p.cube_palette[ci])) for ci in cols], "light_scale": ls}
+        look = p.look if p.look != "mixed" else ("rand500" if rng.uniform() < p.rand500_look_prob else "plain")
+        tint, floor = None, None
+        if self.mat_table >= 0 and self.mat_floor >= 0:
+            if look == "rand500":
+                tint = p.table_tints[int(rng.integers(len(p.table_tints)))]
+                floor = p.floor_colors[int(rng.integers(len(p.floor_colors)))]
+                m.mat_rgba[self.mat_table] = (*tint, 1.0)
+                m.mat_rgba[self.mat_floor] = (*floor, 1.0)
+            else:
+                m.mat_rgba[self.mat_table] = self.plain_rgba["table"]
+                m.mat_rgba[self.mat_floor] = self.plain_rgba["floor"]
+        return {"cube_colors": [list(map(float, p.cube_palette[ci])) for ci in cols], "light_scale": ls,
+                "look": look, "table_tint": list(tint) if tint else None, "floor_color": list(floor) if floor else None}
 
     def tower_status(self, xy_tol: float = 0.015, z_tol: float = 0.012) -> dict:
         pos = self.cube_pos()
