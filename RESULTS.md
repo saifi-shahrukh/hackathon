@@ -27,7 +27,7 @@ native data, same compute) is added to test whether the gain is due to the nativ
 | Flat rand500-look scene (floor plane, random textures) | kept as `--scene flat` for replay-fidelity checks only | `fr3duo/scene.py` |
 | Replay fidelity: recorded commands rebuild the tower in our scene | **19 / 20 episodes (95 %)** | `results/02_scene_replay/episodes_00-09/summary.json`, `results/02_scene_replay/episodes_10-19/summary.json` |
 | Scripted expert (IK, dataset-like timing) | re-implemented | flat scene 6/6 and 5/5 under the eval protocol; clinic scene 4/4; gripper events at 43–45 / 109–111 / 214–221 / 285–290 vs data medians 43 / 109 / 215 / 288; hold reading 0.522; peak joint speed ≤ 0.61 rad/s (data ≤ 0.74) |
-| 200 native episodes in the clinic scene (LeRobot v3.0, same schema, AV1) | **pending** (generating) | `data/fr3_duo_native200/`, `results/03_native_data/check.json` |
+| 200 native episodes in the clinic scene (LeRobot v3.0, same schema, AV1) | **done**, parity check PASS | `data/fr3_duo_native200/`, `results/03_native_data/check.json` |
 | pi0.5 recipe (LoRA r16 alpha=r, expert r32, SigLIP + projector + action/time projections trained, grad ckpt, fp16 autocast on V100, chunk 50, batch 16/rank, lr 2.5e-5 cosine) | assumed = openpi reference recipe; the hackathon run's exact settings are not recorded | `fr3duo_pipeline/train/train_pi05.py`, `scripts/hpc/train_pi05.sbatch` |
 | lerobot 0.4.4 (HPC venv) for training and serving | by choice (the HPC venv) | the dataset itself was written with lerobot 0.6.1; it loads unchanged in 0.4.4 (Gate 0) |
 
@@ -47,8 +47,41 @@ is a separate, unquantified factor and is listed as a limitation.
 
 ## 4. Expert and native dataset
 
-**pending**: expert success rate over all attempts (`data/native_raw/generation_log.jsonl`),
-dataset parity check, side-by-side frames.
+Collection run of 2026-10-29 (scene `clinic`, look `mixed`, seeds 10000–10207, 8 workers, 44 min):
+
+| | value |
+|---|---|
+| attempts | 208 |
+| successful episodes kept | 200 (96.2 % expert success) |
+| failures | 8, all "tower not formed" at placement (cube knocked or misaligned); IK error never above 0.5 mm |
+| look | 146 episodes rand500 colours (table tint + edge colour), 54 plain (white top, grey floor) |
+| frames per episode | 348 mean (rand500: 352) |
+| gripper events | close ≈ 43–45 / open ≈ 109–111 (left), close ≈ 214–221 / open ≈ 285–290 (right) |
+
+Geometry identical to rand500 (verified numerically the same day): RCS cameras (head fovy 52,
+wrists 58, 0.00 mm pose difference), robot bases, home joints, table top at the rand500 grasp
+plane, cube centre 2.1 cm above it, spawn region x 0.35–0.65 / y ±0.15 with the left-arm-takes-
+larger-y rule. Source log: `results/03_native_data/generation_log.jsonl`.
+
+Dataset: `data/fr3_duo_native200/` (LeRobot v3.0, lerobot 0.4.4, 6 fps, AV1, same feature schema as
+rand500; state/action stats copied from rand500 so stages A/B/C share one normaliser; native stats
+kept in `meta/stats_native.json`; provenance in `meta/fr3duo_native_provenance.json`). Video files roll
+over at 50 MB (lerobot default 200) so the dataset (403 MB, largest file 52 MB) fits GitHub's 100 MB
+file limit; lerobot 0.4.4 loads and decodes episodes from every file (checked for episodes 0, 70,
+140, 199).
+
+Parity check `results/03_native_data/check.json` (**PASS**): same fps, codebase version, feature
+schema, task string and codec as rand500; state/action stats identical to rand500 by construction;
+gripper actions exactly {0, 1}; every episode `success=True`; episode length 341–356 (rand500 mean
+352). Two honest differences:
+
+- 96.9 % of native joint-state values lie inside rand500's min/max; the rest are excursions of up to
+  0.22 rad beyond rand500's extremes on a few joints (the IK expert chooses slightly different arm
+  configurations than the organizers' generator). With QUANTILES normalisation (q01/q99) these map a
+  little outside [-1, 1]; this is a real distribution shift between the two datasets and is noted
+  as a limitation.
+- The head camera is brighter on average (mean 0.58 vs 0.36): the plain look has a white tabletop
+  on a grey floor, and the rand500 look reproduces colours but not the organizers' textures.
 
 ## 5. Training runs
 

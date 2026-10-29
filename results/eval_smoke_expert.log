@@ -1,0 +1,45 @@
+WARNING: Attach conflict when attaching 'robotiq_2f85' to 'fr3 scene', policy is 'warning'
+impratio: parent has 20, child has 10, keeping parent value
+
+WARNING: Attach conflict when attaching 'robotiq_2f85' to 'fr3 scene', policy is 'warning'
+impratio: parent has 20, child has 10, keeping parent value
+
+WARNING: Attach conflict when attaching 'fr3_duo_mount' to 'fr3 scene', policy is 'warning'
+impratio: parent has 20, child has 10, keeping parent value
+
+WARNING: Attach conflict when attaching 'robotiq_d405_mount' to 'fr3 scene', policy is 'warning'
+impratio: parent has 20, child has 10, keeping parent value
+
+WARNING: Attach conflict when attaching 'robotiq_d405_mount' to 'fr3 scene', policy is 'warning'
+impratio: parent has 20, child has 10, keeping parent value
+
+WARNING: Attach conflict when attaching 'zed_mini' to 'fr3 scene', policy is 'warning'
+impratio: parent has 20, child has 10, keeping parent value
+
+WARNING: Attach conflict when attaching 'd405' to 'fr3 scene', policy is 'warning'
+impratio: parent has 20, child has 10, keeping parent value
+
+WARNING: Attach conflict when attaching 'd405' to 'fr3 scene', policy is 'warning'
+impratio: parent has 20, child has 10, keeping parent value
+
+/home/robolab-2/ur5e_hande_workspace/robot-control-stack/python/rcs/sim/composer.py:321: UserWarning: Attach conflict when attaching 'robotiq_2f85' to 'fr3 scene', policy is 'warning'
+impratio: parent has 20, child has 10, keeping parent value
+  return self.spec.compile()
+/home/robolab-2/ur5e_hande_workspace/robot-control-stack/python/rcs/sim/composer.py:321: UserWarning: Attach conflict when attaching 'fr3_duo_mount' to 'fr3 scene', policy is 'warning'
+impratio: parent has 20, child has 10, keeping parent value
+  return self.spec.compile()
+/home/robolab-2/ur5e_hande_workspace/robot-control-stack/python/rcs/sim/composer.py:321: UserWarning: Attach conflict when attaching 'robotiq_d405_mount' to 'fr3 scene', policy is 'warning'
+impratio: parent has 20, child has 10, keeping parent value
+  return self.spec.compile()
+/home/robolab-2/ur5e_hande_workspace/robot-control-stack/python/rcs/sim/composer.py:321: UserWarning: Attach conflict when attaching 'zed_mini' to 'fr3 scene', policy is 'warning'
+impratio: parent has 20, child has 10, keeping parent value
+  return self.spec.compile()
+/home/robolab-2/ur5e_hande_workspace/robot-control-stack/python/rcs/sim/composer.py:321: UserWarning: Attach conflict when attaching 'd405' to 'fr3 scene', policy is 'warning'
+impratio: parent has 20, child has 10, keeping parent value
+  return self.spec.compile()
+[eval] expert seed 20000 (1/5): success=True order=['cube_a', 'cube_b', 'cube_c'] grip L[45, 111] R[212, 283] frames=346 103.0s | 1/1
+[eval] expert seed 20001 (2/5): success=True order=['cube_a', 'cube_b', 'cube_c'] grip L[44, 110] R[216, 285] frames=349 120.9s | 2/2
+[eval] expert seed 20002 (3/5): success=True order=['cube_a', 'cube_b', 'cube_c'] grip L[44, 110] R[217, 287] frames=345 99.1s | 3/3
+[eval] expert seed 20003 (4/5): success=True order=['cube_a', 'cube_b', 'cube_c'] grip L[43, 110] R[215, 285] frames=348 130.6s | 4/4
+[eval] expert seed 20004 (5/5): success=True order=['cube_a', 'cube_b', 'cube_c'] grip L[45, 110] R[220, 288] frames=348 106.3s | 5/5
+[eval] expert: 5/5 = 100 % (Wilson 95 % 57-100 %)

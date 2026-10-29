@@ -1,0 +1,17 @@
+628296a86de63a78ca78efe790d4d189  fr3_duo_native200/data/chunk-000/file-000.parquet
+abf2ab0b87b0833d0bce6c7c8c3a2f3b  fr3_duo_native200/meta/episodes/chunk-000/file-000.parquet
+9e34e70632802c7adbbca267ae726b77  fr3_duo_native200/meta/fr3duo_native_provenance.json
+caede3ee3491c15034421ab318441e56  fr3_duo_native200/meta/info.json
+48efa76c831a8ae7b0276b7c7902b35f  fr3_duo_native200/meta/stats.json
+4ee934a102f5454b8096b288461b5156  fr3_duo_native200/meta/stats_native.json
+d91d129505b3241efd3fcfcbc74d5ef5  fr3_duo_native200/meta/tasks.parquet
+80960416d6921e13196d77681e4d4b79  fr3_duo_native200/videos/observation.images.external_camera/chunk-000/file-000.mp4
+41794455ce6865e89f117c0bc1556fe0  fr3_duo_native200/videos/observation.images.external_camera/chunk-000/file-001.mp4
+94c4430a02252829fc5d9fd757a0f74e  fr3_duo_native200/videos/observation.images.external_camera/chunk-000/file-002.mp4
+43ebba15a38b8a5165a62ac7075b3d23  fr3_duo_native200/videos/observation.images.external_camera/chunk-000/file-003.mp4
+37df2f0bcdba38c37b9691ebd8f5302c  fr3_duo_native200/videos/observation.images.left_wrist_camera/chunk-000/file-000.mp4
+eded2cf4e9d96ac9f8e975087769cf62  fr3_duo_native200/videos/observation.images.left_wrist_camera/chunk-000/file-001.mp4
+4e286396e54e6341c5790aee0a937c66  fr3_duo_native200/videos/observation.images.left_wrist_camera/chunk-000/file-002.mp4
+df083c06e4e450d321290a5bf8e8cbef  fr3_duo_native200/videos/observation.images.right_wrist_camera/chunk-000/file-000.mp4
+7793dbfb55e6dc3b50f83612910b8781  fr3_duo_native200/videos/observation.images.right_wrist_camera/chunk-000/file-001.mp4
+9b3e4ec7075b7bb7b42c09860c9025b1  fr3_duo_native200/videos/observation.images.right_wrist_camera/chunk-000/file-002.mp4

@@ -4,7 +4,9 @@
         --stats-from data/fr3_duo_rand500 --n 200
 
 Feature schema, fps (6), task string, video codec (AV1 / libsvtav1, g=2, crf=30, yuv420p) and
-camera keys match fr3_duo_rand500 so the same training command works on both.
+camera keys match fr3_duo_rand500 so the same training command works on both. Video files roll
+over at --video-mb (50 MB) instead of lerobot's 200 MB so every file stays under GitHub's 100 MB
+limit; the loader does not care how episodes are spread over files.
 
 --stats-from copies the `observation.state` and `action` entries of the source dataset's
 meta/stats.json (mean/std/min/max/q01..q99) into the new dataset. Reason: lerobot's train script
@@ -48,6 +50,7 @@ def main() -> int:
     ap.add_argument("--repo-id", default=None)
     ap.add_argument("--overwrite", action="store_true")
     ap.add_argument("--threads", type=int, default=8, help="async PNG writer threads (encoding is per episode)")
+    ap.add_argument("--video-mb", type=int, default=50, help="roll to a new mp4 per camera above this size (GitHub rejects files > 100 MB; lerobot's default is 200)")
     a = ap.parse_args()
     from lerobot.datasets.lerobot_dataset import LeRobotDataset
 
@@ -63,16 +66,21 @@ def main() -> int:
     repo_id = a.repo_id or f"local/{a.out.name}"
     ds = LeRobotDataset.create(repo_id=repo_id, fps=6, features=features(), root=a.out, robot_type="fr3_duo", use_videos=True,
                                image_writer_threads=a.threads)
+    ds.meta.update_chunk_settings(video_files_size_in_mb=a.video_mb)
     t0 = time.time()
     provenance = []
     for i, f in enumerate(files):
         z = np.load(f)
-        n = len(z["state"])
+        # Read every array once: indexing the compressed NpzFile per frame re-inflates the whole
+        # camera array each time (measured 0.22 s/frame, 1.5 min/episode instead of ~3 s).
+        cams = {c: z[c] for c in CAMS}
+        state, action, success = z["state"], z["action"], z["success"]
+        n = len(state)
         for k in range(n):
-            frame = {f"observation.images.{c}": z[c][k] for c in CAMS}
-            frame["observation.state"] = z["state"][k].astype(np.float32)
-            frame["action"] = z["action"][k].astype(np.float32)
-            frame["success"] = np.array([bool(z["success"][k])])
+            frame = {f"observation.images.{c}": cams[c][k] for c in CAMS}
+            frame["observation.state"] = state[k].astype(np.float32)
+            frame["action"] = action[k].astype(np.float32)
+            frame["success"] = np.array([bool(success[k])])
             frame["task"] = TASK
             ds.add_frame(frame)
         ds.save_episode()

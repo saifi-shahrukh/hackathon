@@ -1,0 +1,143 @@
+{
+    "codebase_version": "v3.0",
+    "robot_type": "fr3_duo",
+    "total_episodes": 200,
+    "total_frames": 69654,
+    "total_tasks": 1,
+    "chunks_size": 1000,
+    "data_files_size_in_mb": 100,
+    "video_files_size_in_mb": 50,
+    "fps": 6,
+    "splits": {
+        "train": "0:200"
+    },
+    "data_path": "data/chunk-{chunk_index:03d}/file-{file_index:03d}.parquet",
+    "video_path": "videos/{video_key}/chunk-{chunk_index:03d}/file-{file_index:03d}.mp4",
+    "features": {
+        "observation.images.external_camera": {
+            "dtype": "video",
+            "shape": [
+                224,
+                224,
+                3
+            ],
+            "names": [
+                "height",
+                "width",
+                "channel"
+            ],
+            "info": {
+                "video.height": 224,
+                "video.width": 224,
+                "video.codec": "av1",
+                "video.pix_fmt": "yuv420p",
+                "video.is_depth_map": false,
+                "video.fps": 6,
+                "video.channels": 3,
+                "has_audio": false
+            }
+        },
+        "observation.images.left_wrist_camera": {
+            "dtype": "video",
+            "shape": [
+                224,
+                224,
+                3
+            ],
+            "names": [
+                "height",
+                "width",
+                "channel"
+            ],
+            "info": {
+                "video.height": 224,
+                "video.width": 224,
+                "video.codec": "av1",
+                "video.pix_fmt": "yuv420p",
+                "video.is_depth_map": false,
+                "video.fps": 6,
+                "video.channels": 3,
+                "has_audio": false
+            }
+        },
+        "observation.images.right_wrist_camera": {
+            "dtype": "video",
+            "shape": [
+                224,
+                224,
+                3
+            ],
+            "names": [
+                "height",
+                "width",
+                "channel"
+            ],
+            "info": {
+                "video.height": 224,
+                "video.width": 224,
+                "video.codec": "av1",
+                "video.pix_fmt": "yuv420p",
+                "video.is_depth_map": false,
+                "video.fps": 6,
+                "video.channels": 3,
+                "has_audio": false
+            }
+        },
+        "observation.state": {
+            "dtype": "float32",
+            "shape": [
+                16
+            ],
+            "names": null
+        },
+        "action": {
+            "dtype": "float32",
+            "shape": [
+                16
+            ],
+            "names": null
+        },
+        "success": {
+            "dtype": "bool",
+            "shape": [
+                1
+            ],
+            "names": null
+        },
+        "timestamp": {
+            "dtype": "float32",
+            "shape": [
+                1
+            ],
+            "names": null
+        },
+        "frame_index": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ],
+            "names": null
+        },
+        "episode_index": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ],
+            "names": null
+        },
+        "index": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ],
+            "names": null
+        },
+        "task_index": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ],
+            "names": null
+        }
+    }
+}

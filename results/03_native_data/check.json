@@ -1,0 +1,43 @@
+{
+  "features_equal": true,
+  "fps": [
+    6,
+    6
+  ],
+  "codebase_version": [
+    "v3.0",
+    "v3.0"
+  ],
+  "episodes": [
+    200,
+    490
+  ],
+  "frames": [
+    69654,
+    172526
+  ],
+  "tasks_equal": true,
+  "video_codec": [
+    "av1",
+    "av1"
+  ],
+  "state_action_stats_identical": true,
+  "native_state_within_ref_range_frac": 0.9691044304706119,
+  "native_gripper_action_values": [
+    0.0,
+    1.0
+  ],
+  "native_episode_len": {
+    "mean": 348.27,
+    "min": 341,
+    "max": 356
+  },
+  "ref_episode_len_mean": 352.0938775510204,
+  "native_success_all": true,
+  "decode_ok": true,
+  "head_mean_brightness": {
+    "native": 0.5841979667544365,
+    "ref": 0.36487874910235407
+  },
+  "PASS": true
+}

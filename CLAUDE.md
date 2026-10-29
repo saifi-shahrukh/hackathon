@@ -55,4 +55,8 @@ reported; numbers there come from committed JSON under `results/`, never from me
 - Training runs on the Fraunhofer IIS HPC in the thesis venv (`~/thesis/scripts/hpc/.venv`, V100s,
   no bf16, fp16 autocast). This workstation cannot reach the HPC; the user pulls this repo there.
 - The local RTX 5070 Ti (16 GB) is shared with thesis jobs; check `nvidia-smi` before any GPU work.
+- `data/fr3_duo_native200/` ships inside git (no Hugging Face upload, organizer request). GitHub rejects
+  files over 100 MB, so `raw_to_lerobot.py` rolls video files at 50 MB (`--video-mb`); keep it that way
+  and never let a single file in `data/fr3_duo_native200/` grow past 100 MB. Never index a compressed
+  `.npz` per frame (`z[cam][k]` re-inflates the whole array: 1.5 min/episode instead of 3 s).
 - Commit when a milestone is done; push with the SSH remote (`git@github.com:saifi-shahrukh/hackathon.git`).

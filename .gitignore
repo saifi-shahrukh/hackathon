@@ -27,3 +27,6 @@ __pycache__/
 .ruff_cache/
 MUJOCO_LOG.TXT
 CLAUDE.local.md
+
+# Logs of superseded runs (rejected scenes, the slow first conversion); kept locally only.
+results/superseded/

@@ -1,0 +1,21 @@
+{
+ "condition": "expert",
+ "n": 5,
+ "success": 5,
+ "rate": 1.0,
+ "wilson95": [
+  0.5655085052479191,
+  1.0
+ ],
+ "n_action_steps": 10,
+ "max_frames": 360,
+ "server": {},
+ "seeds": [
+  20000,
+  20001,
+  20002,
+  20003,
+  20004
+ ],
+ "minutes": 9.4
+}
