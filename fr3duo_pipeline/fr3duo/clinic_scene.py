@@ -39,10 +39,14 @@ class ClinicParams(SceneParams):
     spawn_y: tuple[float, float] = (0.0, 0.0)
     min_dist: float = 0.065
     light_scale: tuple[float, float] = (0.6, 1.4)
-    use_usd_head_camera: bool = True
-    # the organizers' stacking frames show red, green and blue cubes; the three colours are assigned
-    # to the cubes in a random permutation per episode
-    cube_palette: list = field(default_factory=lambda: [(0.85, 0.1, 0.1), (0.1, 0.75, 0.15), (0.1, 0.2, 0.9)])
+    # "rand500": the cameras fr3_duo_rand500 was rendered with (RCS defaults: head camera on the mount,
+    # fovy 52; D405 wrists fovy 58) so the policy trained on rand500 sees the same geometry.
+    # "usd": the Isaac handover-stage cameras (head on the head link, fovy 90; wrists 87).
+    cameras: str = "rand500"
+    # cube colours as seen in rand500 (red, blue, green, orange, cyan, yellow, purple, pink)
+    cube_palette: list = field(default_factory=lambda: [
+        (0.9, 0.1, 0.1), (0.1, 0.2, 0.9), (0.1, 0.8, 0.2), (0.95, 0.5, 0.1), (0.1, 0.8, 0.85),
+        (0.95, 0.9, 0.1), (0.6, 0.1, 0.7), (0.9, 0.3, 0.6)])
 
 
 class ClinicScene(CubeScene):
@@ -89,12 +93,12 @@ class ClinicScene(CubeScene):
             c.resolution_width = cam_res
             c.resolution_height = cam_res
         cfg.world_frame_objects = {**(cfg.world_frame_objects or {}), **objs}
-        # cameras: wrists from the fov-87 D405 xml at RCS's (identical) mount offset; head at the USD pose
+        # cameras: default = RCS's own (what rand500 used); "usd" = the Isaac handover-stage cameras
         adds = dict(cfg.camera_adds)
-        for side in ("left", "right"):
-            old = adds[f"{side}_wrist"]
-            adds[f"{side}_wrist"] = CameraAdderConfig(xml_path=self.p.wrist_cam_xml, offset=old.offset, robot_name=side)
-        if self.p.use_usd_head_camera:
+        if self.p.cameras == "usd":
+            for side in ("left", "right"):
+                old = adds[f"{side}_wrist"]
+                adds[f"{side}_wrist"] = CameraAdderConfig(xml_path=self.p.wrist_cam_xml, offset=old.offset, robot_name=side)
             hc = meta["head_camera_root"]
             pos = np.array(hc["pos"]) + self.root_in_world
             w, x, y, z = hc["quat_wxyz"]
