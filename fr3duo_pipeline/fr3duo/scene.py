@@ -104,7 +104,7 @@ class CubeScene:
     """FR3 Duo + table + three cubes, 6 Hz absolute joint control, 224x224 cameras."""
 
     def __init__(self, params: SceneParams | None = None, *, cam_res: int = 224, headless: bool = True,
-                 frequency: float = 6.0, asset_dir: Path | None = None):
+                 frequency: float = 6.0, asset_dir: Path | None = None, overview: bool = False):
         self.p = params or SceneParams()
         from rcs._core.common import Pose
         adir = Path(asset_dir) if asset_dir else Path(tempfile.mkdtemp(prefix="fr3duo_assets_"))
@@ -120,7 +120,8 @@ class CubeScene:
             xml = adir / f"{n}.xml"
             xml.write_text(CUBE_XML.format(name=n, h=self.p.cube_half, rgba="0.8 0.1 0.1 1", density=self.p.cube_density))
             objs[n] = (str(xml), Pose(translation=np.array([0.5, 0.0, 0.3]), quaternion=np.array([0, 0, 0, 1.0])))
-        self.env, self.cfg = make_duo_env(headless=headless, frequency=frequency, cam_res=cam_res, world_frame_objects=objs)
+        ov = ((1.3, -1.1, 0.95), (0.5, 0.0, 0.05)) if overview else None
+        self.env, self.cfg = make_duo_env(headless=headless, frequency=frequency, cam_res=cam_res, world_frame_objects=objs, overview=ov)
         self.env.reset()
         self.h = DuoHandles.from_env(self.env)
         m = self.h.model
@@ -218,9 +219,12 @@ class CubeScene:
     @staticmethod
     def images(obs: dict) -> dict:
         f = obs["frames"]
-        return {"external_camera": np.asarray(f["head"]["rgb"]["data"]).astype(np.uint8),
-                "left_wrist_camera": np.asarray(f["left_wrist"]["rgb"]["data"]).astype(np.uint8),
-                "right_wrist_camera": np.asarray(f["right_wrist"]["rgb"]["data"]).astype(np.uint8)}
+        out = {"external_camera": np.asarray(f["head"]["rgb"]["data"]).astype(np.uint8),
+               "left_wrist_camera": np.asarray(f["left_wrist"]["rgb"]["data"]).astype(np.uint8),
+               "right_wrist_camera": np.asarray(f["right_wrist"]["rgb"]["data"]).astype(np.uint8)}
+        if "overview" in f:
+            out["overview"] = np.asarray(f["overview"]["rgb"]["data"]).astype(np.uint8)
+        return out
 
     def cube_pos(self) -> dict:
         return {n: self.h.data.xpos[self.cube_bid[n]].copy() for n in self.cube_names}

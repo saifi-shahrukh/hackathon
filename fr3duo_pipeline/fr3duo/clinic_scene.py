@@ -22,7 +22,7 @@ from pathlib import Path
 import mujoco
 import numpy as np
 
-from .rcs_scene import DuoHandles
+from .rcs_scene import DuoHandles, add_overview_camera, gl_environment_defaults, quiet_rcs_warnings
 from .scene import CUBE_XML, CubeScene, SceneParams
 
 ROOM = Path(__file__).resolve().parents[1] / "assets" / "room"
@@ -44,7 +44,7 @@ class ClinicParams(SceneParams):
 
 class ClinicScene(CubeScene):
     def __init__(self, params: ClinicParams | None = None, *, cam_res: int = 224, headless: bool = True,
-                 frequency: float = 6.0, asset_dir: Path | None = None):
+                 frequency: float = 6.0, asset_dir: Path | None = None, overview: bool = False):
         self.p = params or ClinicParams()
         meta = json.loads((ROOM / "scene_meta.json").read_text())
         self.root_in_world = np.array(meta["root_in_world"])
@@ -55,7 +55,8 @@ class ClinicScene(CubeScene):
         self.p.spawn_y = (t["ymin"] + w + mg, t["ymax"] - w - mg)
         from rcs._core.common import Pose
         from rcs.envs.scenes import CameraAdderConfig
-        os.environ.setdefault("MUJOCO_GL", "egl")
+        gl_environment_defaults()
+        quiet_rcs_warnings()
         from rcs.envs.base import ControlMode, RelativeTo
         from rcs.envs.configs import EmptyWorldFR3Duo
 
@@ -93,6 +94,9 @@ class ClinicScene(CubeScene):
             adds["head"] = CameraAdderConfig(xml_path=None, offset=Pose(translation=pos, quaternion=np.array([x, y, z, w])),
                                              fovy=self.p.head_fovy)
         cfg.camera_adds = adds
+        if overview:
+            tz = self.table_z_world
+            add_overview_camera(cfg, (1.25, -1.05, tz + 0.75), (0.45, 0.0, tz + 0.05))
         self.env = scene.create_env(cfg)
         self.cfg = cfg
         self.env.reset()

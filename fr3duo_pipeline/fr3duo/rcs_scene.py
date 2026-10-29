@@ -27,10 +27,75 @@ Q_SLICES = {"left": slice(0, 7), "right": slice(8, 15)}
 G_INDEX = {"left": 7, "right": 15}
 
 
-def make_duo_env(*, headless: bool = True, frequency: float = 6.0, cam_res: int = 224,
-                 world_frame_objects: dict | None = None, async_control: bool = True):
-    """EmptyWorldFR3Duo with absolute joint control at `frequency` Hz and square cameras."""
+_QUIET_INSTALLED = False
+
+
+def quiet_rcs_warnings() -> None:
+    """Silence the harmless 'Attach conflict ... impratio' messages RCS's composer triggers for every
+    attached sub-model (the scene keeps impratio=20, the Menagerie-derived parts declare 10). They are
+    emitted both as a MuJoCo C-level warning and as a Python UserWarning."""
+    global _QUIET_INSTALLED
+    if _QUIET_INSTALLED:
+        return
+    import warnings
+    warnings.filterwarnings("ignore", message=".*Attach conflict.*")
+
+    def _handler(msg: str) -> None:
+        if "Attach conflict" in msg or "impratio" in msg:
+            return
+        print(f"MuJoCo warning: {msg}")
+
+    mujoco.set_mju_user_warning(_handler)
+    _QUIET_INSTALLED = True
+
+
+def gl_environment_defaults() -> None:
+    """Make offscreen rendering pick the NVIDIA EGL driver on this box regardless of shell leftovers
+    (robolab-2's .bashrc exports __NV_PRIME_RENDER_OFFLOAD=1, which breaks GL context creation on a
+    single-GPU desktop and lets mesa's EGL grab the device: 'driver (null)', 'failed to create dri2 screen')."""
+    os.environ.pop("__NV_PRIME_RENDER_OFFLOAD", None)
     os.environ.setdefault("MUJOCO_GL", "egl")
+    nvidia_icd = "/usr/share/glvnd/egl_vendor.d/10_nvidia.json"
+    if os.path.exists(nvidia_icd) and os.environ.get("MUJOCO_GL") == "egl":
+        os.environ.setdefault("__EGL_VENDOR_LIBRARY_FILENAMES", nvidia_icd)
+
+
+def lookat_quat_xyzw(pos, target, up=(0.0, 0.0, 1.0)) -> np.ndarray:
+    """Orientation (xyzw, for rcs Pose) of a MuJoCo camera at `pos` looking at `target` (camera -z = view, +y = up)."""
+    pos, target, up = (np.asarray(v, dtype=float) for v in (pos, target, up))
+    view = target - pos
+    view /= np.linalg.norm(view)
+    right = np.cross(view, up)
+    right /= np.linalg.norm(right)
+    cam_up = np.cross(right, view)
+    rot = np.stack([right, cam_up, -view], 1)
+    q = np.zeros(4)
+    mujoco.mju_mat2Quat(q, rot.reshape(-1))      # wxyz
+    return np.array([q[1], q[2], q[3], q[0]])
+
+
+OVERVIEW_CAMERA = {"name": "overview", "res": (640, 360), "fovy": 50.0}
+
+
+def add_overview_camera(cfg, pos, target) -> None:
+    """A free-standing 'overview' camera inside RCS's camera set (viewer only; avoids a second GL renderer)."""
+    from rcs._core.common import Pose
+    from rcs._core.sim import CameraType, SimCameraConfig
+    from rcs.envs.scenes import CameraAdderConfig
+    n, (w, h), fovy = OVERVIEW_CAMERA["name"], OVERVIEW_CAMERA["res"], OVERVIEW_CAMERA["fovy"]
+    cfg.camera_cfgs[n] = SimCameraConfig(identifier=n, type=CameraType.fixed, resolution_width=w, resolution_height=h, frame_rate=30)
+    adds = dict(cfg.camera_adds or {})
+    adds[n] = CameraAdderConfig(xml_path=None, offset=Pose(translation=np.asarray(pos, dtype=float), quaternion=lookat_quat_xyzw(pos, target)), fovy=fovy)
+    cfg.camera_adds = adds
+
+
+def make_duo_env(*, headless: bool = True, frequency: float = 6.0, cam_res: int = 224,
+                 world_frame_objects: dict | None = None, async_control: bool = True,
+                 overview: tuple | None = None):
+    """EmptyWorldFR3Duo with absolute joint control at `frequency` Hz and square cameras.
+    overview=(pos, target) adds the viewer's overview camera."""
+    gl_environment_defaults()
+    quiet_rcs_warnings()
     from rcs.envs.base import ControlMode, RelativeTo
     from rcs.envs.configs import EmptyWorldFR3Duo
 
@@ -48,6 +113,8 @@ def make_duo_env(*, headless: bool = True, frequency: float = 6.0, cam_res: int 
         c.resolution_height = cam_res
     if world_frame_objects:
         cfg.world_frame_objects = {**(cfg.world_frame_objects or {}), **world_frame_objects}
+    if overview is not None:
+        add_overview_camera(cfg, *overview)
     env = scene.create_env(cfg)
     return env, cfg
 
