@@ -32,10 +32,10 @@ results/                       audits, replay fidelity, evaluation tables
 RCS=/home/robolab-2/ur5e_hande_workspace/robot-control-stack/.venv/bin/python
 PI0=/home/robolab-2/ur5e_hande_workspace/Thesis/thesis/envs/pi0/bin/python
 bash fr3duo_pipeline/tools/unpack_dataset.sh rand500                                  # data/fr3_duo_rand500
-$PI0 fr3duo_pipeline/tools/audit_dataset.py data/fr3_duo_rand500                       # results/fr3_duo_rand500_audit.json
-$PI0 fr3duo_pipeline/tools/extract_keyframes.py data/fr3_duo_rand500 results/rand500_frames.npz
-MUJOCO_GL=egl $RCS fr3duo_pipeline/tools/calibrate_scene.py results/rand500_frames.npz   # configs/scene_calib.json
-MUJOCO_GL=egl $RCS fr3duo_pipeline/tools/replay_episode.py results/rand500_frames.npz fr3duo_pipeline/configs/scene_calib.json --episodes 0-19 --out results/replay
+$PI0 fr3duo_pipeline/tools/audit_dataset.py data/fr3_duo_rand500                       # results/01_dataset_audit/fr3_duo_rand500_audit.json
+$PI0 fr3duo_pipeline/tools/extract_keyframes.py data/fr3_duo_rand500 results/01_dataset_audit/rand500_frames.npz
+MUJOCO_GL=egl $RCS fr3duo_pipeline/tools/calibrate_scene.py results/01_dataset_audit/rand500_frames.npz   # configs/scene_calib.json
+MUJOCO_GL=egl $RCS fr3duo_pipeline/tools/replay_episode.py results/01_dataset_audit/rand500_frames.npz fr3duo_pipeline/configs/scene_calib.json --episodes 0-19 --out results/replay
 $PI0 fr3duo_pipeline/tools/side_by_side.py data/fr3_duo_rand500 results/replay --episodes 0,3
 MUJOCO_GL=egl $RCS fr3duo_pipeline/tools/gen_native.py --n 200 --seed0 10000 --out data/native_raw --workers 8
 $PI0 fr3duo_pipeline/tools/raw_to_lerobot.py data/native_raw data/fr3_duo_native200 --stats-from data/fr3_duo_rand500 --n 200

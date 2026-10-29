@@ -1,6 +1,6 @@
 """Dump a LeRobot v3.0 FR3 Duo dataset's states/actions and per-episode gripper events to one npz.
 
-    python fr3duo_pipeline/tools/extract_keyframes.py data/fr3_duo_rand500 results/rand500_frames.npz
+    python fr3duo_pipeline/tools/extract_keyframes.py data/fr3_duo_rand500 results/01_dataset_audit/rand500_frames.npz
 
 The RCS venv (MuJoCo side) has no pandas/pyarrow, so the calibration and replay tools read this
 npz instead of the parquet files. Contents: state (N,16) float32, action (N,16) float32,

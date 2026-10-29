@@ -13,13 +13,27 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+import signal
 import sys
 import time
 from pathlib import Path
 
 import numpy as np
 
+# The RCS GUI is mujoco.viewer in a spawned process and needs a real GL window: with MUJOCO_GL=egl
+# (the default our scene sets for headless rendering) no window ever appears. Set GLFW before the
+# scene module is imported; the three offscreen policy cameras render fine through GLFW too.
+os.environ["MUJOCO_GL"] = "glfw"
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+STOP = {"flag": False}
+
+
+def _on_sigint(signum, frame):  # first Ctrl-C: stop the loop and close cleanly; second: hard exit
+    if STOP["flag"]:
+        os._exit(130)
+    STOP["flag"] = True
+    print("\n[view] stopping (press Ctrl-C again to force)", flush=True)
 
 
 def main() -> int:
@@ -32,14 +46,18 @@ def main() -> int:
     from fr3duo_pipeline.fr3duo.expert import ScriptedStacker
     from fr3duo_pipeline.fr3duo.scene import CubeScene, SceneParams
 
-    scene = CubeScene(SceneParams(), cam_res=224, headless=False)
-    scene.h.sim.open_gui()
-    print("[view] GUI opened; close the window or Ctrl-C to stop")
+    signal.signal(signal.SIGINT, _on_sigint)
+    scene = CubeScene(SceneParams(), cam_res=224, headless=False)   # headless=False opens the RCS GUI process
+    print("[view] GUI process started (a MuJoCo window should appear); Ctrl-C to stop", flush=True)
     time.sleep(2.0)
     dt = (1.0 / 6.0) / max(a.realtime, 1e-3)
+
+    def pace(t):
+        time.sleep(max(0.0, dt - (time.time() - t)))
+
     try:
         if a.replay is not None:
-            z = np.load("results/rand500_frames.npz")
+            z = np.load("results/01_dataset_audit/rand500_frames.npz")
             calib = json.loads(Path("fr3duo_pipeline/configs/scene_calib.json").read_text())
             P = {k: np.array(v) for k, v in calib["per_episode"].items()}
             ep = a.replay
@@ -47,36 +65,39 @@ def main() -> int:
             scene.reset(seed=1000 + ep, xy=xy)
             s0, n = z["ep_start"][ep], z["ep_len"][ep]
             for k in range(n):
+                if STOP["flag"]:
+                    break
                 t = time.time()
                 scene.step(z["action"][s0 + k])
-                scene.h.sim.sync_gui()
-                time.sleep(max(0.0, dt - (time.time() - t)))
-            print(f"[view] replay of rand500 episode {ep}: {scene.tower_status()}")
+                pace(t)
+            print(f"[view] replay of rand500 episode {ep}: success={scene.tower_status()['success']}", flush=True)
             time.sleep(3)
-            return 0
-        for i in range(a.episodes):
-            seed = a.seed + i
-            scene.reset(seed=seed)
-            ex = ScriptedStacker(scene, np.random.default_rng(seed))
-            ex.reset()
-            f = 0
-            while not ex.done(f):
-                t = time.time()
-                scene.step(ex.act(f))
-                scene.h.sim.sync_gui()
-                f += 1
-                time.sleep(max(0.0, dt - (time.time() - t)))
-            for _ in range(6):
-                scene.step(scene.state16())
-                scene.h.sim.sync_gui()
-            ts = scene.tower_status()
-            print(f"[view] seed {seed}: success={ts['success']} order={ts['order']}")
-            time.sleep(2)
-    except KeyboardInterrupt:
-        pass
+        else:
+            for i in range(a.episodes):
+                if STOP["flag"]:
+                    break
+                seed = a.seed + i
+                scene.reset(seed=seed)
+                ex = ScriptedStacker(scene, np.random.default_rng(seed))
+                ex.reset()
+                f = 0
+                while not ex.done(f) and not STOP["flag"]:
+                    t = time.time()
+                    scene.step(ex.act(f))
+                    f += 1
+                    pace(t)
+                for _ in range(6):
+                    scene.step(scene.state16())
+                ts = scene.tower_status()
+                print(f"[view] seed {seed}: success={ts['success']} order={ts['order']}", flush=True)
+                time.sleep(2)
     finally:
-        scene.close()
-    return 0
+        print("[view] closing", flush=True)
+        try:
+            scene.h.sim.close_gui()
+        except Exception as e:  # noqa: BLE001
+            print(f"[view] close_gui: {type(e).__name__}: {e}")
+        os._exit(0)   # the RCS env's own close() can hang on the GUI/IPC teardown; exit directly
 
 
 if __name__ == "__main__":

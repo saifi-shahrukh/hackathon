@@ -1,6 +1,6 @@
 """Tile organizer-dataset frames next to our replay renders at the key frames (lerobot 0.4.4 venv).
 
-    <envs/pi0>/bin/python fr3duo_pipeline/tools/side_by_side.py data/fr3_duo_rand500 results/replay_h021 --episodes 0,1,2
+    <envs/pi0>/bin/python fr3duo_pipeline/tools/side_by_side.py data/fr3_duo_rand500 results/02_scene_replay/episodes_00-09 --episodes 0,1,2
 
 Output <replay_dir>/side_by_side_epXXX.png: one row per key frame (0, 43, 109, 215, 288, final),
 left = organizer dataset (head | left wrist | right wrist), right = our MuJoCo replay.

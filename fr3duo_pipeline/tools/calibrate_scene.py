@@ -1,7 +1,7 @@
 """Reconstruct the cube-stacking scene geometry of fr3_duo_rand500 from forward kinematics.
 
     MUJOCO_GL=egl <rcs venv>/bin/python fr3duo_pipeline/tools/calibrate_scene.py \
-        results/rand500_frames.npz --out fr3duo_pipeline/configs/scene_calib.json
+        results/01_dataset_audit/rand500_frames.npz --out fr3duo_pipeline/configs/scene_calib.json
 
 No cube poses are stored in the dataset, but every episode grasps and releases with a fixed
 script (left: close at ~43, open at ~109; right: close at ~215, open at ~288). The TCP pose at

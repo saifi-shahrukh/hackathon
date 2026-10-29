@@ -1,0 +1,117 @@
+{
+ "episode": 6,
+ "success": true,
+ "final": {
+  "success": true,
+  "order": [
+   "cube_a",
+   "cube_b",
+   "cube_c"
+  ],
+  "on_table": true,
+  "mid_ok": true,
+  "top_ok": true,
+  "still": true,
+  "released": true,
+  "pos": {
+   "cube_a": [
+    0.406,
+    0.142,
+    0.0209
+   ],
+   "cube_b": [
+    0.4051,
+    0.1426,
+    0.0629
+   ],
+   "cube_c": [
+    0.4012,
+    0.1374,
+    0.1049
+   ]
+  }
+ },
+ "status_after_releases": {
+  "120": {
+   "success": false,
+   "order": [
+    "cube_a",
+    "cube_c",
+    "cube_b"
+   ],
+   "on_table": true,
+   "mid_ok": false,
+   "top_ok": false,
+   "still": true,
+   "released": true,
+   "pos": {
+    "cube_a": [
+     0.4059,
+     0.142,
+     0.0209
+    ],
+    "cube_b": [
+     0.405,
+     0.1426,
+     0.0629
+    ],
+    "cube_c": [
+     0.3625,
+     -0.1223,
+     0.021
+    ]
+   }
+  },
+  "298": {
+   "success": true,
+   "order": [
+    "cube_a",
+    "cube_b",
+    "cube_c"
+   ],
+   "on_table": true,
+   "mid_ok": true,
+   "top_ok": true,
+   "still": true,
+   "released": true,
+   "pos": {
+    "cube_a": [
+     0.406,
+     0.142,
+     0.0209
+    ],
+    "cube_b": [
+     0.4051,
+     0.1426,
+     0.0629
+    ],
+    "cube_c": [
+     0.4012,
+     0.1374,
+     0.1049
+    ]
+   }
+  }
+ },
+ "spawn": {
+  "cube_a": [
+   0.40579,
+   0.14213
+  ],
+  "cube_b": [
+   0.57368,
+   0.10019
+  ],
+  "cube_c": [
+   0.36254,
+   -0.12228
+  ]
+ },
+ "track_err_rad": {
+  "median": 0.021542847156524658,
+  "p95": 0.061348944902420044,
+  "max": 0.08487803488969803
+ },
+ "frames": 358,
+ "seconds": 18.5
+}

@@ -18,12 +18,12 @@ native data, same compute) is added to test whether the gain is due to the nativ
 
 | Element | Status | Evidence |
 |---|---|---|
-| Dataset facts (6 fps, 490 eps, 16-D absolute joints, binary gripper 1 = open, one close/open per arm, all episodes start at the RCS home pose) | measured | `results/fr3_duo_rand500_audit.json` |
-| Simulator identity: rand500 was rendered with robot-control-stack's `EmptyWorldFR3Duo` MuJoCo scene (not Isaac Sim) | strong evidence | frame-0 home pose equals `rcs.HOME_POSITIONS` to 1e-6 rad; all three camera views match (`results/replay_h021/side_by_side_ep000.png`) |
+| Dataset facts (6 fps, 490 eps, 16-D absolute joints, binary gripper 1 = open, one close/open per arm, all episodes start at the RCS home pose) | measured | `results/01_dataset_audit/fr3_duo_rand500_audit.json` |
+| Simulator identity: rand500 was rendered with robot-control-stack's `EmptyWorldFR3Duo` MuJoCo scene (not Isaac Sim) | strong evidence | frame-0 home pose equals `rcs.HOME_POSITIONS` to 1e-6 rad; all three camera views match (`results/02_scene_replay/episodes_00-09/side_by_side_ep000.png`) |
 | Cube size 4.2 cm, cubes on the floor plane (z = 0) | measured | FK at grasp frames: TCP 3.74 cm ± 3 mm; gripper reading 0.521 when holding a 4.2 cm cube vs 0.522 in the data (`fr3duo_pipeline/configs/scene_calib.json`) |
 | Spawn rule: x in [0.35, 0.65], y in [-0.15, 0.15]; base cube random; left arm takes the larger-y of the other two | inferred from data | B_y > C_y in 490/490 episodes; only the three y-orders this rule allows occur |
 | Table texture / mat colour / lighting | approximated | procedural wood planks, random tint, flat mat, random light; the organizers' textures are not available |
-| Replay fidelity: recorded commands rebuild the tower in our scene | **19 / 20 episodes (95 %)** | `results/replay_h021/summary.json`, `results/replay_h021_b/summary.json` |
+| Replay fidelity: recorded commands rebuild the tower in our scene | **19 / 20 episodes (95 %)** | `results/02_scene_replay/episodes_00-09/summary.json`, `results/02_scene_replay/episodes_10-19/summary.json` |
 | Scripted expert (IK, dataset-like timing) | re-implemented | 6/6 on the first seeds; gripper events at 43–45 / 109–111 / 214–221 / 285–290 vs data medians 43 / 109 / 215 / 288; hold reading 0.522; peak joint speed ≤ 0.61 rad/s (data ≤ 0.74) |
 | 200 native episodes (LeRobot v3.0, same schema, AV1) | **pending** (generating) | `data/fr3_duo_native200/`, `results/native_vs_rand500/check.json` |
 | pi0.5 recipe (LoRA r16 alpha=r, expert r32, SigLIP + projector + action/time projections trained, grad ckpt, fp16 autocast on V100, chunk 50, batch 16/rank, lr 2.5e-5 cosine) | assumed = openpi reference recipe; the hackathon run's exact settings are not recorded | `fr3duo_pipeline/train/train_pi05.py`, `scripts/hpc/train_pi05.sbatch` |

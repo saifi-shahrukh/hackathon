@@ -1,7 +1,7 @@
 """Replay fidelity: run a rand500 episode's recorded actions open-loop in our MuJoCo scene.
 
     MUJOCO_GL=egl <rcs venv>/bin/python fr3duo_pipeline/tools/replay_episode.py \
-        results/rand500_frames.npz fr3duo_pipeline/configs/scene_calib.json --episodes 0-19 \
+        results/01_dataset_audit/rand500_frames.npz fr3duo_pipeline/configs/scene_calib.json --episodes 0-19 \
         --out results/replay
 
 For each episode the three cubes are placed where the forward-kinematics calibration says they
