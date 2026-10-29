@@ -21,8 +21,9 @@ fr3duo_pipeline/
   scripts/hpc/train_pi05.sbatch  SLURM launcher for stages A / B / C (IIS HPC, thesis venv)
   scripts/hpc/preflight.sh     health board before sbatch
   tools/unpack_dataset.sh      unzip the organizer data once into data/
-  fr3duo/clinic_scene.py       the organizers' hospital room (USD/glTF) in MuJoCo: tray cart in front, USD cameras  (default scene)
-  fr3duo/scene.py              flat rand500-look scene (floor plane, random textures) used for replay-fidelity checks
+  fr3duo/clinic_scene.py       the native-data scene (default): plain tray-table in front of the robot, geometry and
+                               cameras identical to rand500 (verified), looks: plain (eval) / rand500 / mixed (collection)
+  fr3duo/scene.py              flat rand500-look floor scene used for the replay-fidelity checks
   fr3duo/expert.py             scripted IK stacking expert (dataset-like timing, binary gripper)
   assets/room/                 exported room meshes + clinic_scene.xml (tools/export_room_meshes.py, tools/build_room_mjcf.py)
   tools/, eval/                calibration, replay, generation, LeRobot conversion, policy server, evaluation
@@ -42,14 +43,19 @@ $PI0 fr3duo_pipeline/tools/extract_keyframes.py data/fr3_duo_rand500 results/01_
 MUJOCO_GL=egl $RCS fr3duo_pipeline/tools/calibrate_scene.py results/01_dataset_audit/rand500_frames.npz   # configs/scene_calib.json
 MUJOCO_GL=egl $RCS fr3duo_pipeline/tools/replay_episode.py results/01_dataset_audit/rand500_frames.npz fr3duo_pipeline/configs/scene_calib.json --episodes 0-19 --out results/replay
 $PI0 fr3duo_pipeline/tools/side_by_side.py data/fr3_duo_rand500 results/replay --episodes 0,3
-MUJOCO_GL=egl $RCS fr3duo_pipeline/tools/gen_native.py --n 200 --seed0 10000 --out data/native_raw --workers 8
+MUJOCO_GL=egl $RCS fr3duo_pipeline/tools/gen_native.py --scene clinic --look mixed --n 200 --seed0 10000 --out data/native_raw --workers 8
 $PI0 fr3duo_pipeline/tools/raw_to_lerobot.py data/native_raw data/fr3_duo_native200 --stats-from data/fr3_duo_rand500 --n 200
 $PI0 fr3duo_pipeline/tools/check_dataset.py data/fr3_duo_native200 data/fr3_duo_rand500
 # evaluation (GPU): one server per checkpoint, the same 50 seeds for every condition
 $PI0 fr3duo_pipeline/eval/policy_server.py --ckpt checkpoints/A_pi05_rand500_5k/checkpoints/005000/pretrained_model --base-override $HF_HOME/patched_bases/pi05_base &
-MUJOCO_GL=egl $RCS fr3duo_pipeline/eval/run_eval.py --condition A_5k_nas10 --n-action-steps 10
+MUJOCO_GL=egl $RCS fr3duo_pipeline/eval/run_eval.py --condition A_5k_nas10 --n-action-steps 10   # --look plain by default
 MUJOCO_GL=egl $RCS fr3duo_pipeline/eval/run_eval.py --condition expert --expert
 python fr3duo_pipeline/eval/summarize.py results/eval --compare B_native_nas10 C_control_nas10
+```
+
+Look at the scene before collecting or evaluating (camera window = policy input + overview; `--mode gui` = MuJoCo viewer):
+```bash
+$RCS fr3duo_pipeline/tools/view_scene.py --episodes 2            # --look plain|rand500|mixed, --replay N, --scene flat
 ```
 
 ## Training on the HPC (stage A first)
