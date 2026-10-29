@@ -24,16 +24,19 @@ from pathlib import Path
 
 import numpy as np
 
-# GL environment. robolab-2's ~/.bashrc exports __NV_PRIME_RENDER_OFFLOAD=1 and friends; depending on
-# the terminal these make GLX refuse a context ("BadValue") or let mesa's EGL grab the NVIDIA device
-# ("driver (null)", "failed to create dri2 screen"). The dynamic loader and glvnd read these at process
-# start, so the script re-executes itself once with a cleaned environment before any GL import.
+# GL environment, set here so nothing in ~/.bashrc has to change. The X session on robolab-2 uses the
+# NVIDIA GPU as a PRIME render-offload provider: a GLX window (the --mode gui viewer) needs BOTH
+# __NV_PRIME_RENDER_OFFLOAD=1 and __GLX_VENDOR_LIBRARY_NAME=nvidia, otherwise GLX answers
+# "BadValue (integer parameter out of range)". Offscreen EGL rendering (cameras mode, data
+# generation) needs the NVIDIA EGL vendor pinned, otherwise mesa probes the device ("driver (null)",
+# "failed to create dri2 screen"). The loader and glvnd read these at process start, so the script
+# re-executes itself once with the right environment before any GL import.
 _MODE = "gui" if "--mode" in sys.argv and sys.argv[sys.argv.index("--mode") + 1] == "gui" else "cameras"
-_GL_DROP = ("__NV_PRIME_RENDER_OFFLOAD", "__VK_LAYER_NV_optimus", "LIBGL_ALWAYS_SOFTWARE", "LIBGL_ALWAYS_INDIRECT",
-            "PYOPENGL_PLATFORM", "LD_PRELOAD")
+_GL_DROP = ("LIBGL_ALWAYS_SOFTWARE", "LIBGL_ALWAYS_INDIRECT", "PYOPENGL_PLATFORM", "LD_PRELOAD")
 if os.environ.get("FR3DUO_GL_SANITIZED") != "1":
     env = {k: v for k, v in os.environ.items() if k not in _GL_DROP}
     env["__GLX_VENDOR_LIBRARY_NAME"] = "nvidia"
+    env["__NV_PRIME_RENDER_OFFLOAD"] = "1"
     env["MUJOCO_GL"] = "glfw" if _MODE == "gui" else "egl"
     if _MODE != "gui" and os.path.exists("/usr/share/glvnd/egl_vendor.d/10_nvidia.json"):
         env["__EGL_VENDOR_LIBRARY_FILENAMES"] = "/usr/share/glvnd/egl_vendor.d/10_nvidia.json"

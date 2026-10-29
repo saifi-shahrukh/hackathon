@@ -50,10 +50,11 @@ def quiet_rcs_warnings() -> None:
 
 
 def gl_environment_defaults() -> None:
-    """Make offscreen rendering pick the NVIDIA EGL driver on this box regardless of shell leftovers
-    (robolab-2's .bashrc exports __NV_PRIME_RENDER_OFFLOAD=1, which breaks GL context creation on a
-    single-GPU desktop and lets mesa's EGL grab the device: 'driver (null)', 'failed to create dri2 screen')."""
-    os.environ.pop("__NV_PRIME_RENDER_OFFLOAD", None)
+    """Make offscreen rendering pick the NVIDIA EGL driver regardless of shell leftovers (mesa's EGL
+    otherwise probes the device: 'driver (null)', 'failed to create dri2 screen'). The X session on
+    robolab-2 uses NVIDIA as a PRIME render-offload provider: GLX windows need BOTH
+    __NV_PRIME_RENDER_OFFLOAD=1 and __GLX_VENDOR_LIBRARY_NAME=nvidia (verified: without the first, GLX
+    answers 'BadValue'), so those are never removed here."""
     os.environ.setdefault("MUJOCO_GL", "egl")
     nvidia_icd = "/usr/share/glvnd/egl_vendor.d/10_nvidia.json"
     if os.path.exists(nvidia_icd) and os.environ.get("MUJOCO_GL") == "egl":
