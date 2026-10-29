@@ -1,39 +1,53 @@
 {
+ "layout": "simple",
  "root_in_world": [
   -0.0369,
   0.0,
   0.2911
  ],
  "tray": {
-  "xmin": 0.28700000000000003,
-  "xmax": 0.639,
-  "ymin": -0.129,
-  "ymax": 0.129,
-  "zmin": -0.039,
-  "ztop": 0.008,
-  "wall": 0.0225,
-  "floor_top": -0.033194
+  "xmin": 0.2569,
+  "xmax": 0.8169000000000001,
+  "ymin": -0.33,
+  "ymax": 0.33,
+  "zmin": -0.31110000000000004,
+  "ztop": -0.2751,
+  "wall": 0.016,
+  "floor_top": -0.2911
  },
- "tray_raw": {
-  "xmin": 0.445,
-  "xmax": 0.797,
-  "ymin": -0.63,
-  "ymax": -0.372,
-  "zmin": -0.039,
-  "ztop": 0.008,
-  "wall": 0.0225
- },
- "tray_shift": [
-  -0.15799999999999997,
-  0.501
- ],
- "dropped_props": [
-  "NaturalBostonRoundBottle_A02_PR_NVD_01",
-  "SM_PillBottle_01v",
-  "SM_SupplyCart_03a",
-  "WhiteCorrugatedBox_A34_16x16x10cm_PR_NVD_01"
- ],
  "usd_floor_z": -1.021,
+ "spawn_root": {
+  "x": [
+   0.38689999999999997,
+   0.6869000000000001
+  ],
+  "y": [
+   -0.15,
+   0.15
+  ]
+ },
+ "table_world": {
+  "top_z": 0.0,
+  "x": [
+   0.22,
+   0.78
+  ],
+  "y": [
+   -0.33,
+   0.33
+  ],
+  "top_thickness": 0.02,
+  "rim_radius": 0.008,
+  "leg_radius": 0.012,
+  "spawn_x": [
+   0.35,
+   0.65
+  ],
+  "spawn_y": [
+   -0.15,
+   0.15
+  ]
+ },
  "head_camera_root": {
   "pos": [
    0.0991,
@@ -48,6 +62,5 @@
   ],
   "fovy": 90.0
  },
- "wrist_camera_fovy": 87.0,
- "layout": "minimal"
+ "wrist_camera_fovy": 87.0
 }

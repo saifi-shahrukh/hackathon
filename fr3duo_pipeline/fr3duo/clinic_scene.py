@@ -16,7 +16,7 @@ from __future__ import annotations
 import json
 import os
 import tempfile
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field  # noqa: F401
 from pathlib import Path
 
 import mujoco
@@ -38,8 +38,11 @@ class ClinicParams(SceneParams):
     spawn_x: tuple[float, float] = (0.0, 0.0)
     spawn_y: tuple[float, float] = (0.0, 0.0)
     min_dist: float = 0.065
-    light_scale: tuple[float, float] = (0.5, 1.5)
+    light_scale: tuple[float, float] = (0.6, 1.4)
     use_usd_head_camera: bool = True
+    # the organizers' stacking frames show red, green and blue cubes; the three colours are assigned
+    # to the cubes in a random permutation per episode
+    cube_palette: list = field(default_factory=lambda: [(0.85, 0.1, 0.1), (0.1, 0.75, 0.15), (0.1, 0.2, 0.9)])
 
 
 class ClinicScene(CubeScene):
@@ -51,8 +54,12 @@ class ClinicScene(CubeScene):
         self.tray = meta["tray"]
         self.table_z_world = float(self.tray["floor_top"] + self.root_in_world[2])
         t, w, mg = self.tray, self.tray["wall"], self.p.spawn_margin
-        self.p.spawn_x = (t["xmin"] + w + mg, t["xmax"] - w - mg)
-        self.p.spawn_y = (t["ymin"] + w + mg, t["ymax"] - w - mg)
+        if "spawn_root" in meta:   # simple layout: the rand500 cube region, for joint-space transfer
+            self.p.spawn_x = tuple(meta["spawn_root"]["x"])
+            self.p.spawn_y = tuple(meta["spawn_root"]["y"])
+        else:
+            self.p.spawn_x = (t["xmin"] + w + mg, t["xmax"] - w - mg)
+            self.p.spawn_y = (t["ymin"] + w + mg, t["ymax"] - w - mg)
         from rcs._core.common import Pose
         from rcs.envs.scenes import CameraAdderConfig
         gl_environment_defaults()
