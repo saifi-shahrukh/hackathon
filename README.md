@@ -21,7 +21,12 @@ fr3duo_pipeline/
   scripts/hpc/train_pi05.sbatch  SLURM launcher for stages A / B / C (IIS HPC, thesis venv)
   scripts/hpc/preflight.sh     health board before sbatch
   tools/unpack_dataset.sh      unzip the organizer data once into data/
-  fr3duo/, tools/, eval/       MuJoCo scene, calibration, expert, native dataset, evaluation (in progress)
+  fr3duo/clinic_scene.py       the organizers' hospital room (USD/glTF) in MuJoCo: tray cart in front, USD cameras  (default scene)
+  fr3duo/scene.py              flat rand500-look scene (floor plane, random textures) used for replay-fidelity checks
+  fr3duo/expert.py             scripted IK stacking expert (dataset-like timing, binary gripper)
+  assets/room/                 exported room meshes + clinic_scene.xml (tools/export_room_meshes.py, tools/build_room_mjcf.py)
+  tools/, eval/                calibration, replay, generation, LeRobot conversion, policy server, evaluation
+  tools/view_scene.py          MuJoCo viewer: --scene clinic|flat, --replay N
 data/fr3_duo_native200/        the regenerated 200-episode MuJoCo dataset (LeRobot v3.0), committed
 results/                       audits, replay fidelity, evaluation tables
 ```
