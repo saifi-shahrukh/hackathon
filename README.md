@@ -26,6 +26,27 @@ data/fr3_duo_native200/        the regenerated 200-episode MuJoCo dataset (LeRob
 results/                       audits, replay fidelity, evaluation tables
 ```
 
+## Pipeline on the workstation (RCS venv = MuJoCo side, pi0 venv = lerobot 0.4.4 side)
+
+```bash
+RCS=/home/robolab-2/ur5e_hande_workspace/robot-control-stack/.venv/bin/python
+PI0=/home/robolab-2/ur5e_hande_workspace/Thesis/thesis/envs/pi0/bin/python
+bash fr3duo_pipeline/tools/unpack_dataset.sh rand500                                  # data/fr3_duo_rand500
+$PI0 fr3duo_pipeline/tools/audit_dataset.py data/fr3_duo_rand500                       # results/fr3_duo_rand500_audit.json
+$PI0 fr3duo_pipeline/tools/extract_keyframes.py data/fr3_duo_rand500 results/rand500_frames.npz
+MUJOCO_GL=egl $RCS fr3duo_pipeline/tools/calibrate_scene.py results/rand500_frames.npz   # configs/scene_calib.json
+MUJOCO_GL=egl $RCS fr3duo_pipeline/tools/replay_episode.py results/rand500_frames.npz fr3duo_pipeline/configs/scene_calib.json --episodes 0-19 --out results/replay
+$PI0 fr3duo_pipeline/tools/side_by_side.py data/fr3_duo_rand500 results/replay --episodes 0,3
+MUJOCO_GL=egl $RCS fr3duo_pipeline/tools/gen_native.py --n 200 --seed0 10000 --out data/native_raw --workers 8
+$PI0 fr3duo_pipeline/tools/raw_to_lerobot.py data/native_raw data/fr3_duo_native200 --stats-from data/fr3_duo_rand500 --n 200
+$PI0 fr3duo_pipeline/tools/check_dataset.py data/fr3_duo_native200 data/fr3_duo_rand500
+# evaluation (GPU): one server per checkpoint, the same 50 seeds for every condition
+$PI0 fr3duo_pipeline/eval/policy_server.py --ckpt checkpoints/A_pi05_rand500_5k/checkpoints/005000/pretrained_model --base-override $HF_HOME/patched_bases/pi05_base &
+MUJOCO_GL=egl $RCS fr3duo_pipeline/eval/run_eval.py --condition A_5k_nas10 --n-action-steps 10
+MUJOCO_GL=egl $RCS fr3duo_pipeline/eval/run_eval.py --condition expert --expert
+python fr3duo_pipeline/eval/summarize.py results/eval --compare B_native_nas10 C_control_nas10
+```
+
 ## Training on the HPC (stage A first)
 
 ```bash
