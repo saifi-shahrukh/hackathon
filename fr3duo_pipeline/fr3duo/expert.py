@@ -37,13 +37,15 @@ class ArmPlan:
 
 
 class ScriptedStacker:
-    GRASP_TCP_Z = 0.0374          # calibrated grasp TCP height above the table (cube centre at 0.021)
+    GRASP_ABOVE_TABLE = 0.0374    # calibrated grasp TCP height above the table surface (cube centre at 0.021)
     HOVER_Z = 0.17
     PLACE_CLEARANCE = (0.009, 0.004)   # left (B on A), right (C on B): release heights above "on top"
 
     def __init__(self, scene, rng: np.random.Generator | None = None):
         self.sc = scene
         self.rng = rng or np.random.default_rng(0)
+        # table surface height in world coordinates (0 for the flat scene, the tray floor in the clinic scene)
+        self.GRASP_TCP_Z = float(getattr(scene, "table_z_world", 0.0)) + self.GRASP_ABOVE_TABLE
         h = scene.h
         self.ik = {}
         self.q_home = {}

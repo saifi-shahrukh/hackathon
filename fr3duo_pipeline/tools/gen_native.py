@@ -31,16 +31,17 @@ CAMS = ("external_camera", "left_wrist_camera", "right_wrist_camera")
 
 
 def run_one(args) -> dict:
-    seed, out_dir, cam_res = args
+    seed, out_dir, cam_res, scene_name = args
     os.environ.setdefault("MUJOCO_GL", "egl")
     from fr3duo_pipeline.fr3duo.expert import ScriptedStacker
     from fr3duo_pipeline.fr3duo.scene import CubeScene, SceneParams
+    from fr3duo_pipeline.fr3duo.clinic_scene import ClinicScene, ClinicParams
 
     global _SCENE
     try:
         sc = _SCENE
     except NameError:
-        sc = _SCENE = CubeScene(SceneParams(), cam_res=cam_res)
+        sc = _SCENE = ClinicScene(ClinicParams(), cam_res=cam_res) if scene_name == "clinic" else CubeScene(SceneParams(), cam_res=cam_res)
     t0 = time.time()
     obs, info = sc.reset(seed=seed)
     ex = ScriptedStacker(sc, np.random.default_rng(seed))
@@ -59,7 +60,7 @@ def run_one(args) -> dict:
     for _ in range(6):
         obs = sc.step(sc.state16())
     ts = sc.tower_status()
-    rec = {"seed": int(seed), "success": bool(ts["success"]), "frames": f, "seconds": round(time.time() - t0, 1),
+    rec = {"seed": int(seed), "scene": scene_name, "success": bool(ts["success"]), "frames": f, "seconds": round(time.time() - t0, 1),
            "spawn": info["spawn"], "look": info["look"], "tower": {k: v for k, v in ts.items() if k != "pos"},
            "ik_err_max_mm": float(max(ex.ik_err_log) * 1000) if ex.ik_err_log else None}
     if ts["success"]:
@@ -81,6 +82,7 @@ def main() -> int:
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--cam-res", type=int, default=224)
     ap.add_argument("--max-attempts", type=int, default=None)
+    ap.add_argument("--scene", choices=["clinic", "flat"], default="clinic", help="clinic = organizers' room (default); flat = rand500-like floor scene")
     a = ap.parse_args()
     a.out.mkdir(parents=True, exist_ok=True)
     log = a.out / "generation_log.jsonl"
@@ -95,7 +97,7 @@ def main() -> int:
             batch = []
             while len(batch) < a.workers and seed < a.seed0 + max_attempts:
                 if seed not in done:
-                    batch.append((seed, str(a.out), a.cam_res))
+                    batch.append((seed, str(a.out), a.cam_res, a.scene))
                 seed += 1
             if not batch:
                 break

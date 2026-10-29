@@ -1,0 +1,3055 @@
+{
+ "source": "C2_Teach-the-robot_VLA/Environment/Environment_Hackathon_2026/Hackathon_FR3Duo.gltf",
+ "frame": "robot_root_zup",
+ "props": {
+  "Danny": {
+   "parts": [
+    {
+     "file": "Danny__0.obj",
+     "material": "DannyTable",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": "Danny__0.png",
+     "verts": 3664,
+     "faces": 1832,
+     "bbox_min": [
+      -0.5121,
+      -0.3265,
+      -1.016
+     ],
+     "bbox_max": [
+      0.1121,
+      0.2581,
+      0.0
+     ]
+    }
+   ],
+   "bbox_min": [
+    -0.5121,
+    -0.3265,
+    -1.016
+   ],
+   "bbox_max": [
+    0.1121,
+    0.2581,
+    0.0
+   ]
+  },
+  "Floor": {
+   "parts": [
+    {
+     "file": "Floor__0.obj",
+     "material": "floor0",
+     "rgba": [
+      0.35294117647058826,
+      0.3803921568627451,
+      0.403921568627451,
+      1.0
+     ],
+     "texture": "Floor__0.png",
+     "verts": 6,
+     "faces": 2,
+     "bbox_min": [
+      -3.4048,
+      -6.6373,
+      -1.0214
+     ],
+     "bbox_max": [
+      5.8329,
+      3.6196,
+      -1.0214
+     ]
+    }
+   ],
+   "bbox_min": [
+    -3.4048,
+    -6.6373,
+    -1.0214
+   ],
+   "bbox_max": [
+    5.8329,
+    3.6196,
+    -1.0214
+   ]
+  },
+  "FramedPicture_Square05": {
+   "parts": [
+    {
+     "file": "FramedPicture_Square05__0.obj",
+     "material": "Matte",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": "FramedPicture_Square05__0.png",
+     "verts": 64,
+     "faces": 32,
+     "bbox_min": [
+      0.223,
+      -5.382,
+      0.5202
+     ],
+     "bbox_max": [
+      1.0717,
+      -5.3582,
+      1.3693
+     ]
+    },
+    {
+     "file": "FramedPicture_Square05__1.obj",
+     "material": "InnoCube",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": "FramedPicture_Square05__1.png",
+     "verts": 24,
+     "faces": 12,
+     "bbox_min": [
+      0.3427,
+      -5.3922,
+      0.64
+     ],
+     "bbox_max": [
+      0.9524,
+      -5.3629,
+      1.2496
+     ]
+    },
+    {
+     "file": "FramedPicture_Square05__2.obj",
+     "material": "Iron_Cast_Black_Matte",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 1400,
+     "faces": 700,
+     "bbox_min": [
+      0.1627,
+      -5.4004,
+      0.4602
+     ],
+     "bbox_max": [
+      1.1321,
+      -5.3435,
+      1.4293
+     ]
+    },
+    {
+     "file": "FramedPicture_Square05__3.obj",
+     "material": "OmniGlass",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 24,
+     "faces": 12,
+     "bbox_min": [
+      0.2025,
+      -5.3786,
+      0.5021
+     ],
+     "bbox_max": [
+      1.0864,
+      -5.3545,
+      1.3885
+     ]
+    }
+   ],
+   "bbox_min": [
+    0.1627,
+    -5.4004,
+    0.4602
+   ],
+   "bbox_max": [
+    1.1321,
+    -5.3435,
+    1.4293
+   ]
+  },
+  "NaturalBostonRoundBottle_A02_PR_NVD_01": {
+   "parts": [
+    {
+     "file": "NaturalBostonRoundBottle_A02_PR_NVD_01__0.obj",
+     "material": "Plastic_Glossy_White_A",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 9652,
+     "faces": 4580,
+     "bbox_min": [
+      0.5613,
+      0.4253,
+      -0.0483
+     ],
+     "bbox_max": [
+      0.5952,
+      0.4593,
+      -0.0293
+     ]
+    },
+    {
+     "file": "NaturalBostonRoundBottle_A02_PR_NVD_01__1.obj",
+     "material": "Plastic_White_A",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 15726,
+     "faces": 7808,
+     "bbox_min": [
+      0.5395,
+      0.4036,
+      -0.181
+     ],
+     "bbox_max": [
+      0.6169,
+      0.481,
+      -0.0306
+     ]
+    }
+   ],
+   "bbox_min": [
+    0.5395,
+    0.4036,
+    -0.181
+   ],
+   "bbox_max": [
+    0.6169,
+    0.481,
+    -0.0293
+   ]
+  },
+  "Patient_bed__307_": {
+   "parts": [
+    {
+     "file": "Patient_bed__307___0.obj",
+     "material": "metal_rough",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": "Patient_bed__307___0.png",
+     "verts": 29157,
+     "faces": 9719,
+     "bbox_min": [
+      1.9902,
+      -2.4997,
+      -0.9747
+     ],
+     "bbox_max": [
+      3.6361,
+      0.0328,
+      0.0647
+     ]
+    },
+    {
+     "file": "Patient_bed__307___1.obj",
+     "material": "aluminium",
+     "rgba": [
+      0.788235294117647,
+      0.788235294117647,
+      0.788235294117647,
+      1.0
+     ],
+     "texture": null,
+     "verts": 4980,
+     "faces": 1660,
+     "bbox_min": [
+      2.2569,
+      -2.1701,
+      -0.9717
+     ],
+     "bbox_max": [
+      3.4307,
+      -0.2536,
+      -0.5247
+     ]
+    },
+    {
+     "file": "Patient_bed__307___2.obj",
+     "material": "plastic",
+     "rgba": [
+      0.5215686274509804,
+      0.5215686274509804,
+      0.5215686274509804,
+      1.0
+     ],
+     "texture": "Patient_bed__307___2.png",
+     "verts": 9168,
+     "faces": 3056,
+     "bbox_min": [
+      2.1139,
+      -2.4091,
+      -1.0047
+     ],
+     "bbox_max": [
+      3.5078,
+      -0.0733,
+      -0.0847
+     ]
+    },
+    {
+     "file": "Patient_bed__307___3.obj",
+     "material": "leather",
+     "rgba": [
+      0.30980392156862746,
+      0.2823529411764706,
+      0.26666666666666666,
+      1.0
+     ],
+     "texture": "Patient_bed__307___3.png",
+     "verts": 1026,
+     "faces": 342,
+     "bbox_min": [
+      2.0933,
+      -2.377,
+      -0.4497
+     ],
+     "bbox_max": [
+      3.5079,
+      -0.193,
+      -0.0961
+     ]
+    }
+   ],
+   "bbox_min": [
+    1.9902,
+    -2.4997,
+    -1.0047
+   ],
+   "bbox_max": [
+    3.6361,
+    0.0328,
+    0.0647
+   ]
+  },
+  "SM_BooksSet_26": {
+   "parts": [
+    {
+     "file": "SM_BooksSet_26__0.obj",
+     "material": "MI_BooksA",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 379,
+     "faces": 204,
+     "bbox_min": [
+      0.468,
+      -5.1339,
+      -0.1905
+     ],
+     "bbox_max": [
+      0.6711,
+      -4.8679,
+      -0.0905
+     ]
+    },
+    {
+     "file": "SM_BooksSet_26__1.obj",
+     "material": "MI_BooksB",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 254,
+     "faces": 136,
+     "bbox_min": [
+      0.4643,
+      -5.1472,
+      -0.1605
+     ],
+     "bbox_max": [
+      0.6717,
+      -4.8785,
+      -0.0705
+     ]
+    }
+   ],
+   "bbox_min": [
+    0.4643,
+    -5.1472,
+    -0.1905
+   ],
+   "bbox_max": [
+    0.6717,
+    -4.8679,
+    -0.0705
+   ]
+  },
+  "SM_BottleA": {
+   "parts": [
+    {
+     "file": "SM_BottleA__0.obj",
+     "material": "MI_DrinksMachine",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 85,
+     "faces": 104,
+     "bbox_min": [
+      0.2701,
+      -5.099,
+      -0.1905
+     ],
+     "bbox_max": [
+      0.3321,
+      -5.037,
+      0.059
+     ]
+    }
+   ],
+   "bbox_min": [
+    0.2701,
+    -5.099,
+    -0.1905
+   ],
+   "bbox_max": [
+    0.3321,
+    -5.037,
+    0.059
+   ]
+  },
+  "SM_Chair_01a": {
+   "parts": [
+    {
+     "file": "SM_Chair_01a__0.obj",
+     "material": "MI_Chair_01a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 2322,
+     "faces": 2792,
+     "bbox_min": [
+      0.9539,
+      -4.6766,
+      -1.0123
+     ],
+     "bbox_max": [
+      1.716,
+      -3.9264,
+      0.0485
+     ]
+    }
+   ],
+   "bbox_min": [
+    0.9539,
+    -4.6766,
+    -1.0123
+   ],
+   "bbox_max": [
+    1.716,
+    -3.9264,
+    0.0485
+   ]
+  },
+  "SM_Computer_02b": {
+   "parts": [
+    {
+     "file": "SM_Computer_02b__0.obj",
+     "material": "MI_Computer_02a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 623,
+     "faces": 632,
+     "bbox_min": [
+      1.142,
+      -5.3146,
+      -0.1905
+     ],
+     "bbox_max": [
+      1.9381,
+      -4.9338,
+      0.4277
+     ]
+    }
+   ],
+   "bbox_min": [
+    1.142,
+    -5.3146,
+    -0.1905
+   ],
+   "bbox_max": [
+    1.9381,
+    -4.9338,
+    0.4277
+   ]
+  },
+  "SM_Desk_04a": {
+   "parts": [
+    {
+     "file": "SM_Desk_04a__0.obj",
+     "material": "MI_Desk_04a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 744,
+     "faces": 840,
+     "bbox_min": [
+      0.1081,
+      -5.3363,
+      -1.0161
+     ],
+     "bbox_max": [
+      2.1982,
+      -4.6878,
+      -0.1905
+     ]
+    }
+   ],
+   "bbox_min": [
+    0.1081,
+    -5.3363,
+    -1.0161
+   ],
+   "bbox_max": [
+    2.1982,
+    -4.6878,
+    -0.1905
+   ]
+  },
+  "SM_FirstAidKit_01a": {
+   "parts": [
+    {
+     "file": "SM_FirstAidKit_01a__0.obj",
+     "material": "MI_FirstAidKit_01a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 1212,
+     "faces": 1552,
+     "bbox_min": [
+      1.5983,
+      -5.3183,
+      -1.0064
+     ],
+     "bbox_max": [
+      1.7245,
+      -4.9538,
+      -0.6704
+     ]
+    }
+   ],
+   "bbox_min": [
+    1.5983,
+    -5.3183,
+    -1.0064
+   ],
+   "bbox_max": [
+    1.7245,
+    -4.9538,
+    -0.6704
+   ]
+  },
+  "SM_MedShelf_01d": {
+   "parts": [
+    {
+     "file": "SM_MedShelf_01d__0.obj",
+     "material": "MI_MedShelf_01a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 1796,
+     "faces": 1300,
+     "bbox_min": [
+      -2.0851,
+      -1.4015,
+      -1.0147
+     ],
+     "bbox_max": [
+      -1.0785,
+      -0.487,
+      0.9972
+     ]
+    }
+   ],
+   "bbox_min": [
+    -2.0851,
+    -1.4015,
+    -1.0147
+   ],
+   "bbox_max": [
+    -1.0785,
+    -0.487,
+    0.9972
+   ]
+  },
+  "SM_MedicalBag_01a": {
+   "parts": [
+    {
+     "file": "SM_MedicalBag_01a__0.obj",
+     "material": "MI_MedicalBag_01a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 5269,
+     "faces": 4830,
+     "bbox_min": [
+      -1.5479,
+      -1.3048,
+      -0.8422
+     ],
+     "bbox_max": [
+      -1.1427,
+      -1.0285,
+      -0.6319
+     ]
+    }
+   ],
+   "bbox_min": [
+    -1.5479,
+    -1.3048,
+    -0.8422
+   ],
+   "bbox_max": [
+    -1.1427,
+    -1.0285,
+    -0.6319
+   ]
+  },
+  "SM_MedicalCabinet_01a": {
+   "parts": [
+    {
+     "file": "SM_MedicalCabinet_01a__0.obj",
+     "material": "MI_Cabinet_01a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 746,
+     "faces": 551,
+     "bbox_min": [
+      -1.2407,
+      1.5584,
+      -1.015
+     ],
+     "bbox_max": [
+      -0.3512,
+      2.2268,
+      0.9527
+     ]
+    },
+    {
+     "file": "SM_MedicalCabinet_01a__1.obj",
+     "material": "MI_Shelf_Glass_07a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 8,
+     "faces": 4,
+     "bbox_min": [
+      -1.1224,
+      1.5975,
+      -0.0124
+     ],
+     "bbox_max": [
+      -0.4449,
+      1.6173,
+      0.8406
+     ]
+    }
+   ],
+   "bbox_min": [
+    -1.2407,
+    1.5584,
+    -1.015
+   ],
+   "bbox_max": [
+    -0.3512,
+    2.2268,
+    0.9527
+   ]
+  },
+  "SM_Mirror": {
+   "parts": [
+    {
+     "file": "SM_Mirror__0.obj",
+     "material": "MI_ToiletProps",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 52,
+     "faces": 26,
+     "bbox_min": [
+      -1.9468,
+      -5.0194,
+      0.2213
+     ],
+     "bbox_max": [
+      -1.9101,
+      -4.0194,
+      1.5565
+     ]
+    }
+   ],
+   "bbox_min": [
+    -1.9468,
+    -5.0194,
+    0.2213
+   ],
+   "bbox_max": [
+    -1.9101,
+    -4.0194,
+    1.5565
+   ]
+  },
+  "SM_MopSet_01b": {
+   "parts": [
+    {
+     "file": "SM_MopSet_01b__0.obj",
+     "material": "MI_MopBucket_01a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 4680,
+     "faces": 4238,
+     "bbox_min": [
+      -1.7195,
+      -5.35,
+      -1.0147
+     ],
+     "bbox_max": [
+      -0.9578,
+      -4.8852,
+      -0.1161
+     ]
+    }
+   ],
+   "bbox_min": [
+    -1.7195,
+    -5.35,
+    -1.0147
+   ],
+   "bbox_max": [
+    -0.9578,
+    -4.8852,
+    -0.1161
+   ]
+  },
+  "SM_PillBottleSet_01a": {
+   "parts": [
+    {
+     "file": "SM_PillBottleSet_01a__0.obj",
+     "material": "MI_PillBottles_01a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 1665,
+     "faces": 2192,
+     "bbox_min": [
+      -1.5972,
+      -1.1193,
+      -0.1365
+     ],
+     "bbox_max": [
+      -1.3821,
+      -0.9929,
+      -0.0332
+     ]
+    }
+   ],
+   "bbox_min": [
+    -1.5972,
+    -1.1193,
+    -0.1365
+   ],
+   "bbox_max": [
+    -1.3821,
+    -0.9929,
+    -0.0332
+   ]
+  },
+  "SM_PillBottleSet_01b": {
+   "parts": [
+    {
+     "file": "SM_PillBottleSet_01b__0.obj",
+     "material": "MI_PillBottles_01a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 1209,
+     "faces": 1626,
+     "bbox_min": [
+      -1.9155,
+      -1.2219,
+      0.238
+     ],
+     "bbox_max": [
+      -1.7461,
+      -1.118,
+      0.3415
+     ]
+    }
+   ],
+   "bbox_min": [
+    -1.9155,
+    -1.2219,
+    0.238
+   ],
+   "bbox_max": [
+    -1.7461,
+    -1.118,
+    0.3415
+   ]
+  },
+  "SM_PillBottleSet_01c": {
+   "parts": [
+    {
+     "file": "SM_PillBottleSet_01c__0.obj",
+     "material": "MI_PillBottles_01a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 928,
+     "faces": 1014,
+     "bbox_min": [
+      -1.6326,
+      -1.1463,
+      0.6126
+     ],
+     "bbox_max": [
+      -1.5038,
+      -1.0759,
+      0.669
+     ]
+    }
+   ],
+   "bbox_min": [
+    -1.6326,
+    -1.1463,
+    0.6126
+   ],
+   "bbox_max": [
+    -1.5038,
+    -1.0759,
+    0.669
+   ]
+  },
+  "SM_PillBottleSet_01c_01": {
+   "parts": [
+    {
+     "file": "SM_PillBottleSet_01c_01__0.obj",
+     "material": "MI_PillBottles_01a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 928,
+     "faces": 1014,
+     "bbox_min": [
+      4.1225,
+      -1.1649,
+      -0.2025
+     ],
+     "bbox_max": [
+      4.2513,
+      -1.0944,
+      -0.146
+     ]
+    }
+   ],
+   "bbox_min": [
+    4.1225,
+    -1.1649,
+    -0.2025
+   ],
+   "bbox_max": [
+    4.2513,
+    -1.0944,
+    -0.146
+   ]
+  },
+  "SM_PillBottleSet_01d": {
+   "parts": [
+    {
+     "file": "SM_PillBottleSet_01d__0.obj",
+     "material": "MI_PillBottles_01a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 890,
+     "faces": 1030,
+     "bbox_min": [
+      -1.9875,
+      -1.1376,
+      -0.1365
+     ],
+     "bbox_max": [
+      -1.9081,
+      -1.0834,
+      -0.0866
+     ]
+    }
+   ],
+   "bbox_min": [
+    -1.9875,
+    -1.1376,
+    -0.1365
+   ],
+   "bbox_max": [
+    -1.9081,
+    -1.0834,
+    -0.0866
+   ]
+  },
+  "SM_PillBottleSet_01e": {
+   "parts": [
+    {
+     "file": "SM_PillBottleSet_01e__0.obj",
+     "material": "MI_PillBottles_01a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 1818,
+     "faces": 2044,
+     "bbox_min": [
+      -1.723,
+      -1.2438,
+      -0.1365
+     ],
+     "bbox_max": [
+      -1.549,
+      -1.1638,
+      -0.0801
+     ]
+    }
+   ],
+   "bbox_min": [
+    -1.723,
+    -1.2438,
+    -0.1365
+   ],
+   "bbox_max": [
+    -1.549,
+    -1.1638,
+    -0.0801
+   ]
+  },
+  "SM_PillBottle_01v": {
+   "parts": [
+    {
+     "file": "SM_PillBottle_01v__0.obj",
+     "material": "MI_PillBottles_01a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 160,
+     "faces": 198,
+     "bbox_min": [
+      0.6221,
+      0.3418,
+      -0.188
+     ],
+     "bbox_max": [
+      0.6495,
+      0.3691,
+      -0.1462
+     ]
+    }
+   ],
+   "bbox_min": [
+    0.6221,
+    0.3418,
+    -0.188
+   ],
+   "bbox_max": [
+    0.6495,
+    0.3691,
+    -0.1462
+   ]
+  },
+  "SM_SideTable_02a": {
+   "parts": [
+    {
+     "file": "SM_SideTable_02a__0.obj",
+     "material": "MI_SideTable_02a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 1368,
+     "faces": 1324,
+     "bbox_min": [
+      3.4282,
+      -1.5222,
+      -1.0147
+     ],
+     "bbox_max": [
+      4.3755,
+      -1.0209,
+      -0.2025
+     ]
+    }
+   ],
+   "bbox_min": [
+    3.4282,
+    -1.5222,
+    -1.0147
+   ],
+   "bbox_max": [
+    4.3755,
+    -1.0209,
+    -0.2025
+   ]
+  },
+  "SM_SoapDispenser_01a": {
+   "parts": [
+    {
+     "file": "SM_SoapDispenser_01a__0.obj",
+     "material": "MI_SoapDispenser_01a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 277,
+     "faces": 294,
+     "bbox_min": [
+      -1.9704,
+      -3.9069,
+      0.2581
+     ],
+     "bbox_max": [
+      -1.8367,
+      -3.7799,
+      0.5153
+     ]
+    }
+   ],
+   "bbox_min": [
+    -1.9704,
+    -3.9069,
+    0.2581
+   ],
+   "bbox_max": [
+    -1.8367,
+    -3.7799,
+    0.5153
+   ]
+  },
+  "SM_SupplyCabinet_01c": {
+   "parts": [
+    {
+     "file": "SM_SupplyCabinet_01c__0.obj",
+     "material": "MI_SupplyCab_01a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 5117,
+     "faces": 4401,
+     "bbox_min": [
+      -2.1584,
+      -0.2183,
+      -1.0147
+     ],
+     "bbox_max": [
+      -1.2808,
+      1.2904,
+      1.1853
+     ]
+    },
+    {
+     "file": "SM_SupplyCabinet_01c__1.obj",
+     "material": "MI_SupplyCab_01b",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 3224,
+     "faces": 2736,
+     "bbox_min": [
+      -2.0992,
+      -0.1433,
+      -0.8135
+     ],
+     "bbox_max": [
+      -1.3419,
+      1.2145,
+      0.8872
+     ]
+    }
+   ],
+   "bbox_min": [
+    -2.1584,
+    -0.2183,
+    -1.0147
+   ],
+   "bbox_max": [
+    -1.2808,
+    1.2904,
+    1.1853
+   ]
+  },
+  "SM_SupplyCart_01e": {
+   "parts": [
+    {
+     "file": "SM_SupplyCart_01e__0.obj",
+     "material": "MI_SupplyCart_02a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 2658,
+     "faces": 2604,
+     "bbox_min": [
+      0.3646,
+      -0.9846,
+      -1.0147
+     ],
+     "bbox_max": [
+      0.9067,
+      0.122,
+      0.098
+     ]
+    }
+   ],
+   "bbox_min": [
+    0.3646,
+    -0.9846,
+    -1.0147
+   ],
+   "bbox_max": [
+    0.9067,
+    0.122,
+    0.098
+   ]
+  },
+  "SM_SupplyCart_02a": {
+   "parts": [
+    {
+     "file": "SM_SupplyCart_02a__0.obj",
+     "material": "MI_SupplyCart_01a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 7345,
+     "faces": 8024,
+     "bbox_min": [
+      0.604,
+      1.5453,
+      -1.0147
+     ],
+     "bbox_max": [
+      1.4825,
+      2.0963,
+      -0.2326
+     ]
+    }
+   ],
+   "bbox_min": [
+    0.604,
+    1.5453,
+    -1.0147
+   ],
+   "bbox_max": [
+    1.4825,
+    2.0963,
+    -0.2326
+   ]
+  },
+  "SM_SupplyCart_03a": {
+   "parts": [
+    {
+     "file": "SM_SupplyCart_03a__0.obj",
+     "material": "MI_SupplyCart_03a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 3758,
+     "faces": 4216,
+     "bbox_min": [
+      0.2064,
+      0.0779,
+      -1.0147
+     ],
+     "bbox_max": [
+      0.8483,
+      1.2186,
+      0.0192
+     ]
+    }
+   ],
+   "bbox_min": [
+    0.2064,
+    0.0779,
+    -1.0147
+   ],
+   "bbox_max": [
+    0.8483,
+    1.2186,
+    0.0192
+   ]
+  },
+  "SM_Toweldispenser_01a": {
+   "parts": [
+    {
+     "file": "SM_Toweldispenser_01a__0.obj",
+     "material": "MI_PaperTowels_01a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 105,
+     "faces": 80,
+     "bbox_min": [
+      -1.9769,
+      -3.7067,
+      0.2649
+     ],
+     "bbox_max": [
+      -1.8954,
+      -3.4258,
+      0.6537
+     ]
+    }
+   ],
+   "bbox_min": [
+    -1.9769,
+    -3.7067,
+    0.2649
+   ],
+   "bbox_max": [
+    -1.8954,
+    -3.4258,
+    0.6537
+   ]
+  },
+  "SM_TrashCan": {
+   "parts": [
+    {
+     "file": "SM_TrashCan__0.obj",
+     "material": "MI_ToiletProps",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 206,
+     "faces": 196,
+     "bbox_min": [
+      -1.7413,
+      -3.9389,
+      -1.0147
+     ],
+     "bbox_max": [
+      -1.4414,
+      -3.639,
+      -0.2997
+     ]
+    }
+   ],
+   "bbox_min": [
+    -1.7413,
+    -3.9389,
+    -1.0147
+   ],
+   "bbox_max": [
+    -1.4414,
+    -3.639,
+    -0.2997
+   ]
+  },
+  "SM_TrashCan_02": {
+   "parts": [
+    {
+     "file": "SM_TrashCan_02__0.obj",
+     "material": "MI_TrashCan_02",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 56,
+     "faces": 28,
+     "bbox_min": [
+      0.902,
+      -5.2437,
+      -1.0067
+     ],
+     "bbox_max": [
+      1.1584,
+      -4.9873,
+      -0.6617
+     ]
+    }
+   ],
+   "bbox_min": [
+    0.902,
+    -5.2437,
+    -1.0067
+   ],
+   "bbox_max": [
+    1.1584,
+    -4.9873,
+    -0.6617
+   ]
+  },
+  "SM_UtilitiesTray_01e": {
+   "parts": [
+    {
+     "file": "SM_UtilitiesTray_01e__0.obj",
+     "material": "MI_UtilitiesTray_01a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 3718,
+     "faces": 3570,
+     "bbox_min": [
+      -1.7116,
+      -0.8998,
+      -0.1159
+     ],
+     "bbox_max": [
+      -1.1699,
+      -0.5636,
+      -0.0302
+     ]
+    }
+   ],
+   "bbox_min": [
+    -1.7116,
+    -0.8998,
+    -0.1159
+   ],
+   "bbox_max": [
+    -1.1699,
+    -0.5636,
+    -0.0302
+   ]
+  },
+  "SM_Washbasin": {
+   "parts": [
+    {
+     "file": "SM_Washbasin__0.obj",
+     "material": "MI_Washbasin",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 204,
+     "faces": 160,
+     "bbox_min": [
+      -1.9662,
+      -4.9122,
+      -0.1173
+     ],
+     "bbox_max": [
+      -1.3903,
+      -3.8982,
+      0.3226
+     ]
+    }
+   ],
+   "bbox_min": [
+    -1.9662,
+    -4.9122,
+    -0.1173
+   ],
+   "bbox_max": [
+    -1.3903,
+    -3.8982,
+    0.3226
+   ]
+  },
+  "SM_WheelChair_01a": {
+   "parts": [
+    {
+     "file": "SM_WheelChair_01a__0.obj",
+     "material": "MI_WheelChair_01a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 7558,
+     "faces": 8264,
+     "bbox_min": [
+      3.4265,
+      -5.2061,
+      -1.0147
+     ],
+     "bbox_max": [
+      4.6404,
+      -3.9497,
+      0.1443
+     ]
+    }
+   ],
+   "bbox_min": [
+    3.4265,
+    -5.2061,
+    -1.0147
+   ],
+   "bbox_max": [
+    4.6404,
+    -3.9497,
+    0.1443
+   ]
+  },
+  "SM_Xraylightbox_01a": {
+   "parts": [
+    {
+     "file": "SM_Xraylightbox_01a__0.obj",
+     "material": "MI_XRayBox_01a",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 192,
+     "faces": 118,
+     "bbox_min": [
+      3.12,
+      2.3056,
+      0.209
+     ],
+     "bbox_max": [
+      3.8421,
+      2.4241,
+      0.6505
+     ]
+    }
+   ],
+   "bbox_min": [
+    3.12,
+    2.3056,
+    0.209
+   ],
+   "bbox_max": [
+    3.8421,
+    2.4241,
+    0.6505
+   ]
+  },
+  "ServingTray": {
+   "parts": [
+    {
+     "file": "ServingTray__0.obj",
+     "material": "plastic_white",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 2386,
+     "faces": 1154,
+     "bbox_min": [
+      0.4453,
+      -0.6298,
+      -0.0392
+     ],
+     "bbox_max": [
+      0.797,
+      -0.3716,
+      0.0081
+     ]
+    }
+   ],
+   "bbox_min": [
+    0.4453,
+    -0.6298,
+    -0.0392
+   ],
+   "bbox_max": [
+    0.797,
+    -0.3716,
+    0.0081
+   ]
+  },
+  "Wall": {
+   "parts": [
+    {
+     "file": "Wall__0.obj",
+     "material": "veneer__Instance_",
+     "rgba": [
+      0.2196078431372549,
+      0.3215686274509804,
+      0.40784313725490196,
+      1.0
+     ],
+     "texture": null,
+     "verts": 12,
+     "faces": 4,
+     "bbox_min": [
+      -2.1265,
+      2.2685,
+      -1.0046
+     ],
+     "bbox_max": [
+      4.5496,
+      2.4426,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall__1.obj",
+     "material": "veneer__Instance_0",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 12,
+     "faces": 4,
+     "bbox_min": [
+      -2.2804,
+      2.2685,
+      2.1953
+     ],
+     "bbox_max": [
+      4.6956,
+      2.5964,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall__2.obj",
+     "material": "veneer__Instance_1",
+     "rgba": [
+      0.2196078431372549,
+      0.3215686274509804,
+      0.40784313725490196,
+      1.0
+     ],
+     "texture": null,
+     "verts": 12,
+     "faces": 4,
+     "bbox_min": [
+      -2.2804,
+      2.4145,
+      -1.0046
+     ],
+     "bbox_max": [
+      4.6956,
+      2.5964,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall__3.obj",
+     "material": "veneer__Instance_2",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 12,
+     "faces": 4,
+     "bbox_min": [
+      -2.2804,
+      2.2685,
+      -1.0046
+     ],
+     "bbox_max": [
+      4.6956,
+      2.5964,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall__4.obj",
+     "material": "veneer__Instance_3",
+     "rgba": [
+      0.2196078431372549,
+      0.3215686274509804,
+      0.40784313725490196,
+      1.0
+     ],
+     "texture": null,
+     "verts": 12,
+     "faces": 4,
+     "bbox_min": [
+      -0.369,
+      2.3143,
+      -1.0046
+     ],
+     "bbox_max": [
+      2.9106,
+      2.3998,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall__5.obj",
+     "material": "veneer__Instance_4",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 6,
+     "faces": 2,
+     "bbox_min": [
+      -0.3729,
+      2.3143,
+      2.1953
+     ],
+     "bbox_max": [
+      2.9106,
+      2.5498,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall__6.obj",
+     "material": "veneer__Instance_5",
+     "rgba": [
+      0.2196078431372549,
+      0.3215686274509804,
+      0.40784313725490196,
+      1.0
+     ],
+     "texture": null,
+     "verts": 12,
+     "faces": 4,
+     "bbox_min": [
+      -0.3729,
+      2.4642,
+      -1.0046
+     ],
+     "bbox_max": [
+      2.9067,
+      2.5498,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall__7.obj",
+     "material": "metal__Instance_",
+     "rgba": [
+      0.6039215686274509,
+      0.6039215686274509,
+      0.6039215686274509,
+      1.0
+     ],
+     "texture": "Wall__7.png",
+     "verts": 36,
+     "faces": 12,
+     "bbox_min": [
+      -0.3327,
+      2.3153,
+      0.9553
+     ],
+     "bbox_max": [
+      2.8706,
+      2.5487,
+      0.9953
+     ]
+    },
+    {
+     "file": "Wall__8.obj",
+     "material": "metal__Instance_0",
+     "rgba": [
+      0.6039215686274509,
+      0.6039215686274509,
+      0.6039215686274509,
+      1.0
+     ],
+     "texture": "Wall__8.png",
+     "verts": 36,
+     "faces": 12,
+     "bbox_min": [
+      2.8667,
+      2.3988,
+      -0.0047
+     ],
+     "bbox_max": [
+      2.9108,
+      2.5498,
+      0.9953
+     ]
+    },
+    {
+     "file": "Wall__9.obj",
+     "material": "metal__Instance_1",
+     "rgba": [
+      0.6039215686274509,
+      0.6039215686274509,
+      0.6039215686274509,
+      1.0
+     ],
+     "texture": "Wall__9.png",
+     "verts": 36,
+     "faces": 12,
+     "bbox_min": [
+      -0.3728,
+      2.3143,
+      -0.0047
+     ],
+     "bbox_max": [
+      -0.3288,
+      2.4653,
+      0.9953
+     ]
+    },
+    {
+     "file": "Wall__10.obj",
+     "material": "metal__Instance_2",
+     "rgba": [
+      0.6039215686274509,
+      0.6039215686274509,
+      0.6039215686274509,
+      1.0
+     ],
+     "texture": "Wall__10.png",
+     "verts": 36,
+     "faces": 12,
+     "bbox_min": [
+      -0.3327,
+      2.3153,
+      -0.0047
+     ],
+     "bbox_max": [
+      2.8706,
+      2.5487,
+      0.0353
+     ]
+    },
+    {
+     "file": "Wall__11.obj",
+     "material": "glass__Instance_",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 12,
+     "faces": 4,
+     "bbox_min": [
+      -0.3314,
+      2.3703,
+      0.0353
+     ],
+     "bbox_max": [
+      2.8693,
+      2.4938,
+      0.9553
+     ]
+    }
+   ],
+   "bbox_min": [
+    -2.2804,
+    2.2685,
+    -1.0046
+   ],
+   "bbox_max": [
+    4.6956,
+    2.5964,
+    2.1953
+   ]
+  },
+  "Wall1": {
+   "parts": [
+    {
+     "file": "Wall1__0.obj",
+     "material": "veneer__Instance_6",
+     "rgba": [
+      0.2196078431372549,
+      0.3215686274509804,
+      0.40784313725490196,
+      1.0
+     ],
+     "texture": null,
+     "verts": 12,
+     "faces": 4,
+     "bbox_min": [
+      -2.1274,
+      -5.455,
+      -1.0372
+     ],
+     "bbox_max": [
+      -1.926,
+      2.2679,
+      2.1627
+     ]
+    },
+    {
+     "file": "Wall1__1.obj",
+     "material": "veneer__Instance_7",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 12,
+     "faces": 4,
+     "bbox_min": [
+      -2.2813,
+      -5.6089,
+      2.1953
+     ],
+     "bbox_max": [
+      -1.926,
+      2.414,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall1__2.obj",
+     "material": "veneer__Instance_8",
+     "rgba": [
+      0.2196078431372549,
+      0.3215686274509804,
+      0.40784313725490196,
+      1.0
+     ],
+     "texture": null,
+     "verts": 12,
+     "faces": 4,
+     "bbox_min": [
+      -2.2813,
+      -5.6089,
+      -1.0046
+     ],
+     "bbox_max": [
+      -2.072,
+      2.414,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall1__3.obj",
+     "material": "veneer__Instance_9",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 12,
+     "faces": 4,
+     "bbox_min": [
+      -2.2813,
+      -5.6089,
+      -1.0046
+     ],
+     "bbox_max": [
+      -1.926,
+      2.414,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall1__4.obj",
+     "material": "veneer__Instance_10",
+     "rgba": [
+      0.2196078431372549,
+      0.3215686274509804,
+      0.40784313725490196,
+      1.0
+     ],
+     "texture": null,
+     "verts": 6,
+     "faces": 2,
+     "bbox_min": [
+      -2.012,
+      -3.056,
+      1.1954
+     ],
+     "bbox_max": [
+      -1.9885,
+      -2.1563,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall1__5.obj",
+     "material": "veneer__Instance_11",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 6,
+     "faces": 2,
+     "bbox_min": [
+      -2.1619,
+      -3.06,
+      2.1953
+     ],
+     "bbox_max": [
+      -1.9885,
+      -2.1563,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall1__6.obj",
+     "material": "veneer__Instance_12",
+     "rgba": [
+      0.2196078431372549,
+      0.3215686274509804,
+      0.40784313725490196,
+      1.0
+     ],
+     "texture": null,
+     "verts": 6,
+     "faces": 2,
+     "bbox_min": [
+      -2.1619,
+      -3.06,
+      1.1954
+     ],
+     "bbox_max": [
+      -2.1385,
+      -2.1603,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall1__7.obj",
+     "material": "metal__Instance_3",
+     "rgba": [
+      0.6039215686274509,
+      0.6039215686274509,
+      0.6039215686274509,
+      1.0
+     ],
+     "texture": "Wall1__7.png",
+     "verts": 36,
+     "faces": 12,
+     "bbox_min": [
+      -2.1614,
+      -3.0398,
+      1.1753
+     ],
+     "bbox_max": [
+      -1.9891,
+      -2.1763,
+      1.1953
+     ]
+    },
+    {
+     "file": "Wall1__8.obj",
+     "material": "metal__Instance_4",
+     "rgba": [
+      0.6039215686274509,
+      0.6039215686274509,
+      0.6039215686274509,
+      1.0
+     ],
+     "texture": "Wall1__8.png",
+     "verts": 36,
+     "faces": 12,
+     "bbox_min": [
+      -2.162,
+      -2.1802,
+      -1.0047
+     ],
+     "bbox_max": [
+      -2.0115,
+      -2.1562,
+      1.1953
+     ]
+    },
+    {
+     "file": "Wall1__9.obj",
+     "material": "metal__Instance_5",
+     "rgba": [
+      0.6039215686274509,
+      0.6039215686274509,
+      0.6039215686274509,
+      1.0
+     ],
+     "texture": "Wall1__9.png",
+     "verts": 36,
+     "faces": 12,
+     "bbox_min": [
+      -2.139,
+      -3.0599,
+      -1.0047
+     ],
+     "bbox_max": [
+      -1.9885,
+      -3.0359,
+      1.1953
+     ]
+    },
+    {
+     "file": "Wall1__10.obj",
+     "material": "metal__Instance_6",
+     "rgba": [
+      0.6039215686274509,
+      0.6039215686274509,
+      0.6039215686274509,
+      1.0
+     ],
+     "texture": "Wall1__10.png",
+     "verts": 66,
+     "faces": 22,
+     "bbox_min": [
+      -2.8087,
+      -3.6418,
+      -1.0047
+     ],
+     "bbox_max": [
+      -2.1411,
+      -3.0329,
+      1.1815
+     ]
+    },
+    {
+     "file": "Wall1__11.obj",
+     "material": "metal__Instance_7",
+     "rgba": [
+      0.6039215686274509,
+      0.6039215686274509,
+      0.6039215686274509,
+      1.0
+     ],
+     "texture": "Wall1__11.png",
+     "verts": 1404,
+     "faces": 468,
+     "bbox_min": [
+      -2.8027,
+      -3.5843,
+      -0.0747
+     ],
+     "bbox_max": [
+      -2.6823,
+      -3.4392,
+      0.0753
+     ]
+    },
+    {
+     "file": "Wall1__12.obj",
+     "material": "metal__Instance_8",
+     "rgba": [
+      0.6039215686274509,
+      0.6039215686274509,
+      0.6039215686274509,
+      1.0
+     ],
+     "texture": "Wall1__12.png",
+     "verts": 1404,
+     "faces": 468,
+     "bbox_min": [
+      -2.7621,
+      -3.6345,
+      -0.0747
+     ],
+     "bbox_max": [
+      -2.6097,
+      -3.5218,
+      0.0753
+     ]
+    }
+   ],
+   "bbox_min": [
+    -2.8087,
+    -5.6089,
+    -1.0372
+   ],
+   "bbox_max": [
+    -1.926,
+    2.414,
+    2.1953
+   ]
+  },
+  "Wall2": {
+   "parts": [
+    {
+     "file": "Wall2__0.obj",
+     "material": "veneer__Instance_13",
+     "rgba": [
+      0.2196078431372549,
+      0.3215686274509804,
+      0.40784313725490196,
+      1.0
+     ],
+     "texture": null,
+     "verts": 12,
+     "faces": 4,
+     "bbox_min": [
+      -1.9251,
+      -5.4551,
+      -1.0046
+     ],
+     "bbox_max": [
+      4.751,
+      -5.281,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall2__1.obj",
+     "material": "veneer__Instance_14",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 12,
+     "faces": 4,
+     "bbox_min": [
+      -2.0711,
+      -5.609,
+      2.1953
+     ],
+     "bbox_max": [
+      4.9049,
+      -5.281,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall2__2.obj",
+     "material": "veneer__Instance_15",
+     "rgba": [
+      0.2196078431372549,
+      0.3215686274509804,
+      0.40784313725490196,
+      1.0
+     ],
+     "texture": null,
+     "verts": 12,
+     "faces": 4,
+     "bbox_min": [
+      -2.0711,
+      -5.609,
+      -1.0046
+     ],
+     "bbox_max": [
+      4.9049,
+      -5.427,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall2__3.obj",
+     "material": "veneer__Instance_16",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 12,
+     "faces": 4,
+     "bbox_min": [
+      -2.0711,
+      -5.609,
+      -1.0046
+     ],
+     "bbox_max": [
+      4.9049,
+      -5.281,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall2__4.obj",
+     "material": "veneer__Instance_17",
+     "rgba": [
+      0.2196078431372549,
+      0.3215686274509804,
+      0.40784313725490196,
+      1.0
+     ],
+     "texture": null,
+     "verts": 6,
+     "faces": 2,
+     "bbox_min": [
+      2.5744,
+      -5.3377,
+      1.1954
+     ],
+     "bbox_max": [
+      3.4741,
+      -5.3143,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall2__5.obj",
+     "material": "veneer__Instance_18",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 6,
+     "faces": 2,
+     "bbox_min": [
+      2.5744,
+      -5.4877,
+      2.1953
+     ],
+     "bbox_max": [
+      3.478,
+      -5.3143,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall2__6.obj",
+     "material": "veneer__Instance_19",
+     "rgba": [
+      0.2196078431372549,
+      0.3215686274509804,
+      0.40784313725490196,
+      1.0
+     ],
+     "texture": null,
+     "verts": 6,
+     "faces": 2,
+     "bbox_min": [
+      2.5783,
+      -5.4877,
+      1.1954
+     ],
+     "bbox_max": [
+      3.478,
+      -5.4642,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall2__7.obj",
+     "material": "metal__Instance_9",
+     "rgba": [
+      0.6039215686274509,
+      0.6039215686274509,
+      0.6039215686274509,
+      1.0
+     ],
+     "texture": "Wall2__7.png",
+     "verts": 36,
+     "faces": 12,
+     "bbox_min": [
+      2.5944,
+      -5.4872,
+      1.1753
+     ],
+     "bbox_max": [
+      3.4579,
+      -5.3148,
+      1.1953
+     ]
+    },
+    {
+     "file": "Wall2__8.obj",
+     "material": "metal__Instance_10",
+     "rgba": [
+      0.6039215686274509,
+      0.6039215686274509,
+      0.6039215686274509,
+      1.0
+     ],
+     "texture": "Wall2__8.png",
+     "verts": 36,
+     "faces": 12,
+     "bbox_min": [
+      2.5743,
+      -5.4877,
+      -1.0047
+     ],
+     "bbox_max": [
+      2.5982,
+      -5.3372,
+      1.1953
+     ]
+    },
+    {
+     "file": "Wall2__9.obj",
+     "material": "metal__Instance_11",
+     "rgba": [
+      0.6039215686274509,
+      0.6039215686274509,
+      0.6039215686274509,
+      1.0
+     ],
+     "texture": "Wall2__9.png",
+     "verts": 36,
+     "faces": 12,
+     "bbox_min": [
+      3.454,
+      -5.4647,
+      -1.0047
+     ],
+     "bbox_max": [
+      3.4779,
+      -5.3143,
+      1.1953
+     ]
+    },
+    {
+     "file": "Wall2__10.obj",
+     "material": "metal__Instance_12",
+     "rgba": [
+      0.6039215686274509,
+      0.6039215686274509,
+      0.6039215686274509,
+      1.0
+     ],
+     "texture": "Wall2__10.png",
+     "verts": 66,
+     "faces": 22,
+     "bbox_min": [
+      2.5882,
+      -5.5014,
+      -1.0047
+     ],
+     "bbox_max": [
+      3.4658,
+      -5.4399,
+      1.1815
+     ]
+    },
+    {
+     "file": "Wall2__11.obj",
+     "material": "metal__Instance_13",
+     "rgba": [
+      0.6039215686274509,
+      0.6039215686274509,
+      0.6039215686274509,
+      1.0
+     ],
+     "texture": "Wall2__11.png",
+     "verts": 1404,
+     "faces": 468,
+     "bbox_min": [
+      3.2565,
+      -5.4422,
+      -0.0747
+     ],
+     "bbox_max": [
+      3.4223,
+      -5.3771,
+      0.0753
+     ]
+    },
+    {
+     "file": "Wall2__12.obj",
+     "material": "metal__Instance_14",
+     "rgba": [
+      0.6039215686274509,
+      0.6039215686274509,
+      0.6039215686274509,
+      1.0
+     ],
+     "texture": "Wall2__12.png",
+     "verts": 1404,
+     "faces": 468,
+     "bbox_min": [
+      3.259,
+      -5.5481,
+      -0.0747
+     ],
+     "bbox_max": [
+      3.4235,
+      -5.4797,
+      0.0753
+     ]
+    }
+   ],
+   "bbox_min": [
+    -2.0711,
+    -5.609,
+    -1.0047
+   ],
+   "bbox_max": [
+    4.9049,
+    -5.281,
+    2.1953
+   ]
+  },
+  "Wall3": {
+   "parts": [
+    {
+     "file": "Wall3__0.obj",
+     "material": "veneer__Instance_20",
+     "rgba": [
+      0.2196078431372549,
+      0.3215686274509804,
+      0.40784313725490196,
+      1.0
+     ],
+     "texture": null,
+     "verts": 18,
+     "faces": 6,
+     "bbox_min": [
+      5.2368,
+      -5.4668,
+      -0.6033
+     ],
+     "bbox_max": [
+      5.4382,
+      2.2565,
+      2.5966
+     ]
+    },
+    {
+     "file": "Wall3__1.obj",
+     "material": "veneer__Instance_21",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 18,
+     "faces": 6,
+     "bbox_min": [
+      4.5497,
+      -5.4268,
+      2.1953
+     ],
+     "bbox_max": [
+      4.905,
+      2.5963,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall3__2.obj",
+     "material": "veneer__Instance_22",
+     "rgba": [
+      0.2196078431372549,
+      0.3215686274509804,
+      0.40784313725490196,
+      1.0
+     ],
+     "texture": null,
+     "verts": 18,
+     "faces": 6,
+     "bbox_min": [
+      4.6957,
+      -5.4268,
+      -1.0046
+     ],
+     "bbox_max": [
+      4.905,
+      2.5963,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall3__3.obj",
+     "material": "veneer__Instance_23",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 12,
+     "faces": 4,
+     "bbox_min": [
+      4.5497,
+      -5.4268,
+      -1.0046
+     ],
+     "bbox_max": [
+      4.905,
+      2.5963,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall3__4.obj",
+     "material": "veneer__Instance_24",
+     "rgba": [
+      0.2196078431372549,
+      0.3215686274509804,
+      0.40784313725490196,
+      1.0
+     ],
+     "texture": null,
+     "verts": 12,
+     "faces": 4,
+     "bbox_min": [
+      4.5811,
+      -0.2618,
+      -1.0046
+     ],
+     "bbox_max": [
+      4.6202,
+      1.2376,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall3__5.obj",
+     "material": "veneer__Instance_25",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 6,
+     "faces": 2,
+     "bbox_min": [
+      4.5811,
+      -0.2618,
+      2.1953
+     ],
+     "bbox_max": [
+      4.7701,
+      1.2416,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall3__6.obj",
+     "material": "veneer__Instance_26",
+     "rgba": [
+      0.2196078431372549,
+      0.3215686274509804,
+      0.40784313725490196,
+      1.0
+     ],
+     "texture": null,
+     "verts": 12,
+     "faces": 4,
+     "bbox_min": [
+      4.731,
+      -0.2579,
+      -1.0046
+     ],
+     "bbox_max": [
+      4.7701,
+      1.2416,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall3__7.obj",
+     "material": "metal__Instance_15",
+     "rgba": [
+      0.6039215686274509,
+      0.6039215686274509,
+      0.6039215686274509,
+      1.0
+     ],
+     "texture": "Wall3__7.png",
+     "verts": 36,
+     "faces": 12,
+     "bbox_min": [
+      4.5821,
+      -0.2218,
+      0.9553
+     ],
+     "bbox_max": [
+      4.7691,
+      1.2013,
+      0.9953
+     ]
+    },
+    {
+     "file": "Wall3__8.obj",
+     "material": "metal__Instance_16",
+     "rgba": [
+      0.6039215686274509,
+      0.6039215686274509,
+      0.6039215686274509,
+      1.0
+     ],
+     "texture": "Wall3__8.png",
+     "verts": 36,
+     "faces": 12,
+     "bbox_min": [
+      4.6192,
+      -0.262,
+      -0.0047
+     ],
+     "bbox_max": [
+      4.7701,
+      -0.218,
+      0.9953
+     ]
+    },
+    {
+     "file": "Wall3__9.obj",
+     "material": "metal__Instance_17",
+     "rgba": [
+      0.6039215686274509,
+      0.6039215686274509,
+      0.6039215686274509,
+      1.0
+     ],
+     "texture": "Wall3__9.png",
+     "verts": 36,
+     "faces": 12,
+     "bbox_min": [
+      4.5811,
+      1.1975,
+      -0.0047
+     ],
+     "bbox_max": [
+      4.7321,
+      1.2415,
+      0.9953
+     ]
+    },
+    {
+     "file": "Wall3__10.obj",
+     "material": "metal__Instance_18",
+     "rgba": [
+      0.6039215686274509,
+      0.6039215686274509,
+      0.6039215686274509,
+      1.0
+     ],
+     "texture": "Wall3__10.png",
+     "verts": 36,
+     "faces": 12,
+     "bbox_min": [
+      4.5821,
+      -0.2218,
+      -0.0047
+     ],
+     "bbox_max": [
+      4.7691,
+      1.2013,
+      0.0353
+     ]
+    },
+    {
+     "file": "Wall3__11.obj",
+     "material": "glass__Instance_0",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 12,
+     "faces": 4,
+     "bbox_min": [
+      4.6371,
+      -0.2205,
+      0.0353
+     ],
+     "bbox_max": [
+      4.7141,
+      1.2,
+      0.9553
+     ]
+    },
+    {
+     "file": "Wall3__12.obj",
+     "material": "veneer__Instance_27",
+     "rgba": [
+      0.2196078431372549,
+      0.3215686274509804,
+      0.40784313725490196,
+      1.0
+     ],
+     "texture": null,
+     "verts": 12,
+     "faces": 4,
+     "bbox_min": [
+      4.6735,
+      -3.8038,
+      -1.0046
+     ],
+     "bbox_max": [
+      4.7126,
+      -2.3043,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall3__13.obj",
+     "material": "veneer__Instance_28",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 6,
+     "faces": 2,
+     "bbox_min": [
+      4.6735,
+      -3.8038,
+      2.1953
+     ],
+     "bbox_max": [
+      4.8625,
+      -2.3004,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall3__14.obj",
+     "material": "veneer__Instance_29",
+     "rgba": [
+      0.2196078431372549,
+      0.3215686274509804,
+      0.40784313725490196,
+      1.0
+     ],
+     "texture": null,
+     "verts": 12,
+     "faces": 4,
+     "bbox_min": [
+      4.8234,
+      -3.7999,
+      -1.0046
+     ],
+     "bbox_max": [
+      4.8625,
+      -2.3004,
+      2.1953
+     ]
+    },
+    {
+     "file": "Wall3__15.obj",
+     "material": "metal__Instance_19",
+     "rgba": [
+      0.6039215686274509,
+      0.6039215686274509,
+      0.6039215686274509,
+      1.0
+     ],
+     "texture": "Wall3__15.png",
+     "verts": 36,
+     "faces": 12,
+     "bbox_min": [
+      4.6745,
+      -3.7638,
+      0.9553
+     ],
+     "bbox_max": [
+      4.8615,
+      -2.3406,
+      0.9953
+     ]
+    },
+    {
+     "file": "Wall3__16.obj",
+     "material": "metal__Instance_20",
+     "rgba": [
+      0.6039215686274509,
+      0.6039215686274509,
+      0.6039215686274509,
+      1.0
+     ],
+     "texture": "Wall3__16.png",
+     "verts": 36,
+     "faces": 12,
+     "bbox_min": [
+      4.7115,
+      -3.8039,
+      -0.0047
+     ],
+     "bbox_max": [
+      4.8625,
+      -3.7599,
+      0.9953
+     ]
+    },
+    {
+     "file": "Wall3__17.obj",
+     "material": "metal__Instance_21",
+     "rgba": [
+      0.6039215686274509,
+      0.6039215686274509,
+      0.6039215686274509,
+      1.0
+     ],
+     "texture": "Wall3__17.png",
+     "verts": 36,
+     "faces": 12,
+     "bbox_min": [
+      4.6735,
+      -2.3444,
+      -0.0047
+     ],
+     "bbox_max": [
+      4.8245,
+      -2.3004,
+      0.9953
+     ]
+    },
+    {
+     "file": "Wall3__18.obj",
+     "material": "metal__Instance_22",
+     "rgba": [
+      0.6039215686274509,
+      0.6039215686274509,
+      0.6039215686274509,
+      1.0
+     ],
+     "texture": "Wall3__18.png",
+     "verts": 36,
+     "faces": 12,
+     "bbox_min": [
+      4.6745,
+      -3.7638,
+      -0.0047
+     ],
+     "bbox_max": [
+      4.8615,
+      -2.3406,
+      0.0353
+     ]
+    },
+    {
+     "file": "Wall3__19.obj",
+     "material": "glass__Instance_1",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 12,
+     "faces": 4,
+     "bbox_min": [
+      4.7295,
+      -3.7625,
+      0.0353
+     ],
+     "bbox_max": [
+      4.8065,
+      -2.3419,
+      0.9553
+     ]
+    }
+   ],
+   "bbox_min": [
+    4.5497,
+    -5.4668,
+    -1.0046
+   ],
+   "bbox_max": [
+    5.4382,
+    2.5963,
+    2.5966
+   ]
+  },
+  "WhiteCorrugatedBox_A34_16x16x10cm_PR_NVD_01": {
+   "parts": [
+    {
+     "file": "WhiteCorrugatedBox_A34_16x16x10cm_PR_NVD_01__0.obj",
+     "material": "M_WhiteCorrugatedBox_Decal_01",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 2851,
+     "faces": 1411,
+     "bbox_min": [
+      0.4897,
+      0.2313,
+      -0.1756
+     ],
+     "bbox_max": [
+      0.5963,
+      0.2651,
+      -0.1039
+     ]
+    },
+    {
+     "file": "WhiteCorrugatedBox_A34_16x16x10cm_PR_NVD_01__1.obj",
+     "material": "M_WhiteCorrugatedBox_Cardboard_01",
+     "rgba": [
+      0.7,
+      0.7,
+      0.7,
+      1.0
+     ],
+     "texture": null,
+     "verts": 4726,
+     "faces": 2300,
+     "bbox_min": [
+      0.4902,
+      0.2313,
+      -0.1758
+     ],
+     "bbox_max": [
+      0.5966,
+      0.2651,
+      -0.1044
+     ]
+    }
+   ],
+   "bbox_min": [
+    0.4897,
+    0.2313,
+    -0.1758
+   ],
+   "bbox_max": [
+    0.5966,
+    0.2651,
+    -0.1039
+   ]
+  }
+ }
+}

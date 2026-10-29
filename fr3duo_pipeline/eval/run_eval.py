@@ -51,9 +51,11 @@ def main() -> int:
     ap.add_argument("--max-frames", type=int, default=360)
     ap.add_argument("--out", type=Path, default=Path("results/eval"))
     ap.add_argument("--strips", type=int, default=5, help="save head-camera strips for this many seeds")
+    ap.add_argument("--scene", choices=["clinic", "flat"], default="clinic")
     a = ap.parse_args()
     from PIL import Image
     from fr3duo_pipeline.fr3duo.scene import CubeScene, SceneParams
+    from fr3duo_pipeline.fr3duo.clinic_scene import ClinicScene, ClinicParams
 
     seeds = json.loads(a.seeds.read_text())["seeds"]
     if a.n_seeds:
@@ -61,7 +63,7 @@ def main() -> int:
     out = a.out / a.condition
     out.mkdir(parents=True, exist_ok=True)
     (out / "strips").mkdir(exist_ok=True)
-    scene = CubeScene(SceneParams(), cam_res=224)
+    scene = ClinicScene(ClinicParams(), cam_res=224) if a.scene == "clinic" else CubeScene(SceneParams(), cam_res=224)
     conn = None
     info = {}
     if not a.expert:
@@ -134,7 +136,7 @@ def main() -> int:
     jl.close()
     lo, hi = wilson(n_ok, len(seeds))
     summ = {"condition": a.condition, "n": len(seeds), "success": n_ok, "rate": n_ok / len(seeds), "wilson95": [lo, hi],
-            "n_action_steps": a.n_action_steps, "max_frames": a.max_frames, "server": info, "seeds": seeds,
+            "n_action_steps": a.n_action_steps, "max_frames": a.max_frames, "scene": a.scene, "server": info, "seeds": seeds,
             "minutes": round((time.time() - t_all) / 60, 1)}
     (out / "summary.json").write_text(json.dumps(summ, indent=1))
     print(f"[eval] {a.condition}: {n_ok}/{len(seeds)} = {100 * n_ok / len(seeds):.0f} % (Wilson 95 % {100 * lo:.0f}-{100 * hi:.0f} %)")

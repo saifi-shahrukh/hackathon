@@ -42,12 +42,15 @@ def main() -> int:
     ap.add_argument("--seed", type=int, default=20000)
     ap.add_argument("--replay", type=int, default=None, help="rand500 episode index to replay instead of the expert")
     ap.add_argument("--realtime", type=float, default=1.0, help="playback speed factor (1.0 = 6 Hz wall clock)")
+    ap.add_argument("--scene", choices=["clinic", "flat"], default="clinic", help="clinic = organizers' room (default)")
     a = ap.parse_args()
     from fr3duo_pipeline.fr3duo.expert import ScriptedStacker
     from fr3duo_pipeline.fr3duo.scene import CubeScene, SceneParams
+    from fr3duo_pipeline.fr3duo.clinic_scene import ClinicScene, ClinicParams
 
     signal.signal(signal.SIGINT, _on_sigint)
-    scene = CubeScene(SceneParams(), cam_res=224, headless=False)   # headless=False opens the RCS GUI process
+    scene = (ClinicScene(ClinicParams(), cam_res=224, headless=False) if a.scene == "clinic"
+             else CubeScene(SceneParams(), cam_res=224, headless=False))   # headless=False opens the RCS GUI process
     print("[view] GUI process started (a MuJoCo window should appear); Ctrl-C to stop", flush=True)
     time.sleep(2.0)
     dt = (1.0 / 6.0) / max(a.realtime, 1e-3)
