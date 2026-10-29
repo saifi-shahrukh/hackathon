@@ -1,0 +1,29 @@
+# Organizer material (multi-GB zips, USD scenes, their SmolVLA checkpoints) stays local.
+C2_Teach-the-robot_VLA/
+models/
+
+# Datasets: everything under data/ is ignored EXCEPT the regenerated native MuJoCo set,
+# which the organizers asked for and which ships inside this repo.
+data/*
+!data/fr3_duo_native200/
+!data/*.md5
+
+# Training outputs and large evaluation artefacts.
+checkpoints/
+results/videos/
+wandb/
+outputs/
+
+*.zip
+*.safetensors
+*.pt
+*.npz
+
+.venv*/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+MUJOCO_LOG.TXT
+CLAUDE.local.md
